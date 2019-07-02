@@ -5,7 +5,7 @@
         Oh, hey there.
       </h1>
       <h2 class="animated fadeIn delay-2s">
-        My name is Jacob. I make cool stuff at the computer.
+        My name is Jacob. I make cool stuff on the computer.
       </h2>
     </div>
   </section>
@@ -22,21 +22,53 @@
   background-position: center;
 
   .opener-text {
-    text-align: center;
-
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
+    text-align: center;
     color: rgba(230, 230, 230, 0.65);
 
     h1 {
-      font-size: 8rem;
+      font-size: 3rem;
+
+      @media (min-width: 576px) {
+        font-size: 4.5rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 6rem;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 8rem;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 10rem;
+      }
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 0.75rem;
+
+      @media (min-width: 576px) {
+        font-size: 1.35rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 1.9rem;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 2.6rem;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 3rem;
+      }
     }
   }
 }
