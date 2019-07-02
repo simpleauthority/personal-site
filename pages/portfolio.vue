@@ -1,3 +1,5 @@
 <template>
-  <h1>This is my portfolio</h1>
+  <b-container>
+    <h1>There is nothing to see here yet.</h1>
+  </b-container>
 </template>
