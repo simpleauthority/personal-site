@@ -2,6 +2,8 @@
 
 > My personal website powered by Nuxt
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a7a5d50-620e-4f11-a99d-de10dac70ef9/deploy-status)](https://app.netlify.com/sites/jacobandersen/deploys)
+
 ## Build Setup
 
 ``` bash
@@ -18,5 +20,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
