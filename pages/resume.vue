@@ -173,6 +173,23 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: "Jacob Andersen's Resume",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: "Read Jacob Andersen's resume and hire him!"
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 .resume-header {
   margin-top: 15px;

@@ -11,6 +11,24 @@
   </section>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      title: "Jacob Andersen's Personal Website",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Enter Jacob's world and take an adventure through inventive new technologies"
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 @import 'assets/animate.css';
 
