@@ -146,7 +146,7 @@
                   <p class="indented">
                     October 2017 &ndash; February 2019
                   </p>
-                  <ul class="exdented">
+                  <ul class="outdented">
                     <li>
                       Made use of the .NET OnBase API to create custom solutions
                       to major business-line pain points including document
@@ -303,7 +303,7 @@ export default {
         }
       }
 
-      .exdented {
+      .outdented {
         margin-left: -10px;
       }
     }
