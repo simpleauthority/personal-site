@@ -1,5 +1,8 @@
 export default {
   mode: 'universal',
+  server: {
+    port: 1337
+  },
   /*
    ** Headers of the page
    */
