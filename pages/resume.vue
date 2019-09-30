@@ -134,11 +134,11 @@
 </template>
 
 <script>
-import ContactInformationLine from '../components/ContactInformationLine'
-import ResumeSection from '../components/ResumeSection'
-import SimpleListGroup from '../components/SimpleListGroup'
-import ResumeEntry from '../components/ResumeEntry'
-import IndentableList from '../components/IndentableList'
+import ContactInformationLine from '../components/resume/ContactInformationLine'
+import ResumeSection from '../components/resume/ResumeSection'
+import SimpleListGroup from '../components/resume/SimpleListGroup'
+import ResumeEntry from '../components/resume/ResumeEntry'
+import IndentableList from '../components/resume/IndentableList'
 
 export default {
   components: {

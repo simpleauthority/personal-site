@@ -13,7 +13,7 @@
 <style lang="scss">
 .portfolio {
   background-color: rgba(62, 67, 67, 0.65);
-  color: #a39d98;
+  color: #ccc;
   margin-top: 15px;
   padding: 10px;
   border-radius: 5px;
