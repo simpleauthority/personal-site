@@ -16,10 +16,10 @@
         <b-row>
           <b-col cols="12">
             <ResumeSection>
-              <template v-slot:header>
+              <template #header>
                 Current Goal
               </template>
-              <template v-slot:content>
+              <template #content>
                 <p>
                   Seeking a challenging position in the development field where
                   I am able to apply innovative technologies to create or
@@ -30,22 +30,22 @@
           </b-col>
           <b-col cols="12" md="6">
             <ResumeSection>
-              <template v-slot:header>
+              <template #header>
                 Relevant Skills
               </template>
-              <template v-slot:content>
+              <template #content>
                 <SimpleListGroup
                   :items="[
-                    'Javascript, jQuery, Cash, and Zepto',
-                    'React, Vue, and Angular',
-                    'Redux and Vuex',
-                    'CSS, SASS, and LESS',
-                    'NPM, Yarn, Bower, and Webpack',
-                    'Git, Subversion, Mercurial',
-                    'Agile, Scrum, and Kanban',
-                    'XML, HTML, HAML, and SLIM',
-                    'IntelliJ IDE and Visual Studio Code',
-                    'Polling, SSE, and Websockets'
+                    'Javascript, jQuery, Cash, & Zepto',
+                    'React, Vue, & Angular',
+                    'Redux & Vuex',
+                    'CSS, SASS, & LESS',
+                    'NPM, Yarn, Bower, & Webpack',
+                    'Git, Subversion, & Mercurial',
+                    'Agile, Scrum, & Kanban',
+                    'XML, HTML, HAML, & SLIM',
+                    'IntelliJ IDE & Visual Studio Code',
+                    'Polling, SSE, & Websockets'
                   ]"
                 />
               </template>
@@ -53,22 +53,22 @@
           </b-col>
           <b-col cols="12" md="6">
             <ResumeSection>
-              <template v-slot:header>
+              <template #header>
                 Other Skills
               </template>
-              <template v-slot:content>
+              <template #content>
                 <SimpleListGroup
                   :items="[
-                    'Java, .NET Core, C#, PHP, and Python',
-                    'Batch, Bash, and ZSH',
-                    'Maven and Gradle Build Systems',
-                    'Continuous Integration and Deployment',
+                    'Java, .NET Core, C#, PHP, & Python',
+                    'Batch, Bash, & ZSH',
+                    'Maven & Gradle Build Systems',
+                    'Continuous Integration',
                     'Automated Unit Testing (TDD)',
-                    'Code Hotswapping and Hotreloading',
-                    'REST, JWT, Oauth2, and Sessions',
-                    'MySQL, MongoDB, and SQL Server',
-                    'Apache, Nginx, and IIS',
-                    'Windows and Linux Administration'
+                    'Code Hotswapping & Hot-Reloading',
+                    'REST, JWT, Oauth2, & Sessions',
+                    'MySQL, MongoDB, & SQL Server',
+                    'Apache, Nginx, & IIS',
+                    'Windows & Linux Administration'
                   ]"
                 />
               </template>
@@ -76,10 +76,10 @@
           </b-col>
           <b-col cols="12">
             <ResumeSection>
-              <template v-slot:header>
+              <template #header>
                 Education
               </template>
-              <template v-slot:content>
+              <template #content>
                 <ResumeEntry title="Associate of Arts: Computer Science">
                   <template #content>
                     <p class="indented">
@@ -105,10 +105,10 @@
           </b-col>
           <b-col cols="12">
             <ResumeSection>
-              <template v-slot:header>
+              <template #header>
                 Professional Experience
               </template>
-              <template v-slot:content>
+              <template #content>
                 <ResumeEntry title="Rabobank N.A., Assistant Vice President">
                   <template #content>
                     <p class="indented">

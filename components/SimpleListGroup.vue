@@ -17,3 +17,25 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.list-group-item {
+  font-size: 0.75rem;
+
+  @media (min-width: 576px) {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+  }
+}
+</style>

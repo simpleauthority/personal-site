@@ -36,7 +36,7 @@ export default {
   }
 
   p {
-    margin: 2px 0;
+    margin-bottom: 0px;
     font-size: 0.75rem;
 
     @media (min-width: 576px) {
