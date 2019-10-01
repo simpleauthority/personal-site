@@ -1,7 +1,10 @@
 <template>
-  <b-container class="blog">
-    <h1>There is nothing to see here yet.</h1>
-  </b-container>
+  <header class="page-header">
+    <h1>Hey, look over there!</h1>
+    <h2>
+      <small><em>There's actually nothing there, yet.</em></small>
+    </h2>
+  </header>
 </template>
 
 <style lang="scss">

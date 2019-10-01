@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="resume-header">
+    <header class="page-header">
       <h1>
         Jacob Andersen
       </h1>
@@ -11,7 +11,7 @@
         />
       </h2>
     </header>
-    <section class="resume-body">
+    <main>
       <b-container>
         <b-row>
           <b-col cols="12">
@@ -82,22 +82,22 @@
               <template #content>
                 <ResumeEntry title="Associate of Arts: Computer Science">
                   <template #content>
-                    <p class="indented">
-                      August 2017 &ndash; Present
-                    </p>
-                    <p class="indented">
-                      Allan Hancock College &mdash; Santa Maria, California
-                    </p>
+                    <IndentableParagraph
+                      :items="[
+                        'August 2017 &ndash; Present',
+                        'Allan Hancock College &mdash; Santa Maria, California'
+                      ]"
+                    />
                   </template>
                 </ResumeEntry>
                 <ResumeEntry title="High School Diploma">
                   <template #content>
-                    <p class="indented">
-                      June 2016
-                    </p>
-                    <p class="indented">
-                      Ernest Righetti High School &mdash; Orcutt, California
-                    </p>
+                    <IndentableParagraph
+                      :items="[
+                        'June 2016',
+                        'Ernest Righetti High School &mdash; Orcutt, California'
+                      ]"
+                    />
                   </template>
                 </ResumeEntry>
               </template>
@@ -111,9 +111,9 @@
               <template #content>
                 <ResumeEntry title="Rabobank N.A., Assistant Vice President">
                   <template #content>
-                    <p class="indented">
-                      October 2017 &ndash; February 2019
-                    </p>
+                    <IndentableParagraph
+                      :items="['October 2017 &ndash; February 2019']"
+                    />
                     <IndentableList
                       :out="true"
                       :items="[
@@ -129,7 +129,7 @@
           </b-col>
         </b-row>
       </b-container>
-    </section>
+    </main>
   </div>
 </template>
 
@@ -138,6 +138,7 @@ import ContactInformationLine from '../components/resume/ContactInformationLine'
 import ResumeSection from '../components/resume/ResumeSection'
 import SimpleListGroup from '../components/resume/SimpleListGroup'
 import ResumeEntry from '../components/resume/ResumeEntry'
+import IndentableParagraph from '../components/resume/IndentableParagraph'
 import IndentableList from '../components/resume/IndentableList'
 
 export default {
@@ -146,6 +147,7 @@ export default {
     ResumeSection,
     SimpleListGroup,
     ResumeEntry,
+    IndentableParagraph,
     IndentableList
   },
 
@@ -156,76 +158,10 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: "Read Jacob Andersen's resume and hire him!"
+          content: "Read Jacob Andersen's resume and hire him (please)!"
         }
       ]
     }
   }
 }
 </script>
-
-<style lang="scss">
-.resume-header {
-  margin-top: 15px;
-  text-align: center;
-
-  color: #ccc;
-
-  h1 {
-    font-size: 1.5rem;
-
-    @media (min-width: 576px) {
-      font-size: 2rem;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 2.5rem;
-    }
-
-    @media (min-width: 992px) {
-      font-size: 3rem;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 4.2rem;
-    }
-  }
-
-  h2 {
-    font-size: 0.8rem;
-
-    @media (min-width: 576px) {
-      font-size: 1.2rem;
-    }
-
-    @media (min-width: 768px) {
-      font-size: 1.7rem;
-    }
-
-    @media (min-width: 992px) {
-      font-size: 2.3rem;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 2.9rem;
-    }
-  }
-
-  a {
-    color: #ccc;
-
-    &:hover {
-      text-decoration: none;
-      color: #aaa;
-    }
-  }
-}
-
-.resume-body {
-  margin-top: 30px;
-
-  .card {
-    margin-bottom: 10px;
-  }
-}
-</style>

@@ -14,3 +14,9 @@ export default {
   name: 'ResumeSection'
 }
 </script>
+
+<style lang="scss">
+.card {
+  margin-bottom: 10px;
+}
+</style>

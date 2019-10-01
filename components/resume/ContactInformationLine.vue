@@ -1,7 +1,8 @@
 <template>
   <span>
     <EmailLink :email="email" />
-    &mdash;
+    <span class="d-none d-sm-inline">&mdash;</span>
+    <span class="d-block d-sm-none" />
     <PhoneLink :phone="phone" />
   </span>
 </template>
