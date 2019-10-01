@@ -60,6 +60,7 @@ export default {
 .portfolio-entry {
   min-height: 575px;
   max-height: 575px;
+  margin-bottom: 10px;
 
   @media (min-width: 576px) {
     min-height: 560px;
