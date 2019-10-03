@@ -9,7 +9,7 @@
       class="portfolio-entry"
     >
       <b-card-text>
-        <p><slot /></p>
+        <slot />
       </b-card-text>
       <template #footer>
         <b-button

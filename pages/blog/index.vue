@@ -13,33 +13,7 @@
         </div>
         <div v-else v-masonry item-selector=".post">
           <b-row>
-            <no-ssr>
-              <b-col
-                v-for="(post, idx) in posts"
-                :key="'post-' + idx"
-                v-masonry-tile
-                cols="12"
-                lg="6"
-                xl="4"
-                class="post"
-              >
-                <b-card
-                  bg-variant="light"
-                  sub-title-tag="time"
-                  :img-src="getFeaturedImage(post.featuredMedia)"
-                  img-top
-                >
-                  <header slot="header">
-                    <nuxt-link :to="'/blog/post/' + post.slug">
-                      <h4>{{ post.title }}</h4>
-                    </nuxt-link>
-                    <small>{{ getPostNumber(idx) }} &vert; {{ getPostedDate(post.posted) }}</small>
-                  </header>
-                  <!-- eslint-disable-next-line vue/no-v-html -->
-                  <div v-html="post.excerpt" />
-                </b-card>
-              </b-col>
-            </no-ssr>
+            <BlogPostShard v-for="(post, idx) in posts" :key="'post-' + idx" :post="post" :number="posts.length - idx" />
           </b-row>
         </div>
       </b-container>
@@ -49,10 +23,10 @@
 
 <script>
 import { mapState } from 'vuex'
-import PostMethodsMixin from '../../mixins/post-methods-mixin'
+import BlogPostShard from '../../components/blog/BlogPostShard'
 
 export default {
-  mixins: [PostMethodsMixin],
+  components: { BlogPostShard },
   head() {
     return {
       title: "Jacob Andersen's Blog",

@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import PostMethodsMixin from '../../../../mixins/post-methods-mixin'
+import ApiHelperMixin from '../../../../mixins/api-helper-mixin'
 
 export default {
-  mixins: [PostMethodsMixin],
+  mixins: [ApiHelperMixin],
   head() {
     return {
       title: `${this.post.title} | Jacob Andersen's Blog`,
