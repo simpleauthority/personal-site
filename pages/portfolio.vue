@@ -34,6 +34,15 @@
             to go to sleep.
           </PortfolioEntry>
           <PortfolioEntry
+            title="My Blog"
+            :image="blog"
+            href="/blog"
+          >
+            Believe it or not, the <nuxt-link to="/blog">
+              blog
+            </nuxt-link> on this website is powered by a simple <a href="https://wordpress.org" target="_blank">WordPress</a> installation. This website is powered by <a href="https://nuxtjs.org/" target="_blank">NuxtJS</a>, and all it does is send queries as needed to a self-hosted WordPress blog for the posts, categories, tags, and whatever else is necessary to give the best viewing experience. I hope you enjoy its simplicity!
+          </PortfolioEntry>
+          <PortfolioEntry
             title="My GitHub Profile"
             :image="github"
             href="https://github.com/simpleauthority"
@@ -55,6 +64,7 @@
 import PortfolioEntry from '../components/portfolio/PortfolioEntry'
 import weatherImage from '../assets/weather.png'
 import cyclesImage from '../assets/cycles.png'
+import blogImage from '../assets/blog.png'
 import githubImage from '../assets/github.png'
 
 export default {
@@ -77,6 +87,9 @@ export default {
     },
     cycles() {
       return cyclesImage
+    },
+    blog() {
+      return blogImage
     },
     github() {
       return githubImage

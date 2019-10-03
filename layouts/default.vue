@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss">
-.everything {
+body {
   min-height: 100vh;
   background-image: url('~assets/prism.png');
 }

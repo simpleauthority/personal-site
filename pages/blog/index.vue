@@ -1,14 +1,17 @@
 <template>
   <div>
     <header class="page-header">
-      <h1>So you're looking for blog posts?</h1>
+      <h1>My Scribblings</h1>
       <h2>
-        Well, here they are!
+        &lt;3. I love you!
       </h2>
     </header>
-    <main>
+    <main class="posts">
       <b-container>
-        <div v-masonry item-selector=".post">
+        <div v-if="posts.length === 0">
+          <p>Awww. No posts yet.</p>
+        </div>
+        <div v-else v-masonry item-selector=".post">
           <b-row>
             <no-ssr>
               <b-col
@@ -27,12 +30,12 @@
                   img-top
                 >
                   <header slot="header">
-                    <nuxt-link :to="'/blog/post/' + post.id">
+                    <nuxt-link :to="'/blog/post/' + post.slug">
                       <h4>{{ post.title.rendered }}</h4>
                     </nuxt-link>
-                    <small>{{ getSubtitle(idx, post.date) }}</small>
+                    <small>{{ getPostNumber(idx) }} &vert; {{ getPostedDate(post.date) }}</small>
                   </header>
-                  <p v-html="post.excerpt.rendered" />
+                  <div v-html="post.excerpt.rendered" />
                 </b-card>
               </b-col>
             </no-ssr>
@@ -44,27 +47,23 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import PostMethodsMixin from '../../mixins/post-methods-mixin'
+
 export default {
-  async asyncData({ store }) {
-    const posts = await store.dispatch('blog/getPostsRequest')
-    return { posts }
-  },
-  methods: {
-    getFeaturedImage(id) {
-      if (id === 0) return ''
-      return `https://api.jacob.engineer/blog/media/${id}/mime`
-    },
-    getSubtitle(idx, date) {
-      return `Post #${this.posts.length - idx}, posted ${this.$moment(
-        new Date(date)
-      ).format('dddd, MMMM Do YYYY')}`
-    }
+  mixins: [PostMethodsMixin],
+  computed: {
+    ...mapState({
+      posts: state => state.blog.posts
+    })
   }
 }
 </script>
 
 <style lang="scss">
-.post {
-  margin-bottom: 15px;
+.posts {
+  .post {
+    margin-bottom: 15px;
+  }
 }
 </style>

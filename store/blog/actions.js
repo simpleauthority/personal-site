@@ -1,9 +1,12 @@
 export default {
-  getPostsRequest({ _ }) {
-    return this.$axios.$get('blog/posts')
+  async loadPostsRequest({ commit }) {
+    const posts = await this.$axios.$get('blog/posts')
+    if (posts !== undefined) {
+      commit('setPosts', posts)
+    }
   },
 
-  getPostRequest({ _ }, id) {
+  loadFullPostRequest({ _ }, id) {
     return this.$axios.$get(`blog/posts/${id}`)
   }
 }
