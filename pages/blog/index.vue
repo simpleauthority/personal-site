@@ -52,6 +52,18 @@ import PostMethodsMixin from '../../mixins/post-methods-mixin'
 
 export default {
   mixins: [PostMethodsMixin],
+  head() {
+    return {
+      title: "Jacob Andersen's Blog",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Check out Jacob\'s scribblings. WARNING: There may be randomness ahead.'
+        }
+      ]
+    }
+  },
   computed: {
     ...mapState({
       posts: state => state.blog.posts

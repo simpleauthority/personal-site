@@ -22,6 +22,18 @@ import PostMethodsMixin from '../../../../mixins/post-methods-mixin'
 
 export default {
   mixins: [PostMethodsMixin],
+  head() {
+    return {
+      title: `${this.post.title.rendered} | Jacob Andersen's Blog`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Check out Jacob's Post "${this.post.title.rendered}" on https://jacob.engineer`
+        }
+      ]
+    }
+  },
   validate({ params }) {
     return /^[A-z0-9-_]*$/.test(params.slug)
   },
