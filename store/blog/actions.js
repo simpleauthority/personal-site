@@ -4,9 +4,5 @@ export default {
     if (posts !== undefined) {
       commit('setPosts', posts)
     }
-  },
-
-  loadFullPostRequest({ _ }, id) {
-    return this.$axios.$get(`blog/posts/${id}`)
   }
 }

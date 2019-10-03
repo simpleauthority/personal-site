@@ -1,14 +1,15 @@
 <template>
   <div>
     <header class="page-header">
-      <h1>{{ post.title.rendered }}</h1>
+      <h1>{{ post.title }}</h1>
       <h2>
-        {{ getPostedDate(post.date) }}
+        {{ getPostedDate(post.posted) }}
       </h2>
     </header>
     <main class="fullpost">
       <b-container>
-        <section v-html="post.content.rendered" />
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <section v-html="post.content" />
         <b-button to="/blog" variant="info" block class="go-back">
           Go back to all posts
         </b-button>
@@ -24,12 +25,12 @@ export default {
   mixins: [PostMethodsMixin],
   head() {
     return {
-      title: `${this.post.title.rendered} | Jacob Andersen's Blog`,
+      title: `${this.post.title} | Jacob Andersen's Blog`,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: `Check out Jacob's Post "${this.post.title.rendered}" on https://jacob.engineer`
+          content: `Check out Jacob's Post "${this.post.title}" on https://jacob.engineer`
         }
       ]
     }
@@ -37,20 +38,16 @@ export default {
   validate({ params }) {
     return /^[A-z0-9-_]*$/.test(params.slug)
   },
-  async asyncData({ store, params, error }) {
+  asyncData({ store, params, error }) {
     const post = store.getters['blog/getPost'](params.slug)
     if (post === undefined) error({ status: 404, message: 'Unknown Post' })
-    const fullPost = await store.dispatch('blog/loadFullPostRequest', post.id)
-    if (fullPost.data && fullPost.data.status === 404) error({ status: 404, message: 'Unknown Post' })
-    return { post: fullPost }
+    return { post }
   }
 }
 </script>
 
 <style lang="scss">
 body {
-  //margin-bottom: 30px;
-
   .fullpost {
     margin-bottom: 30px;
     color: #ccc;

@@ -26,16 +26,17 @@
                 <b-card
                   bg-variant="light"
                   sub-title-tag="time"
-                  :img-src="getFeaturedImage(post.featured_media)"
+                  :img-src="getFeaturedImage(post.featuredMedia)"
                   img-top
                 >
                   <header slot="header">
                     <nuxt-link :to="'/blog/post/' + post.slug">
-                      <h4>{{ post.title.rendered }}</h4>
+                      <h4>{{ post.title }}</h4>
                     </nuxt-link>
-                    <small>{{ getPostNumber(idx) }} &vert; {{ getPostedDate(post.date) }}</small>
+                    <small>{{ getPostNumber(idx) }} &vert; {{ getPostedDate(post.posted) }}</small>
                   </header>
-                  <div v-html="post.excerpt.rendered" />
+                  <!-- eslint-disable-next-line vue/no-v-html -->
+                  <div v-html="post.excerpt" />
                 </b-card>
               </b-col>
             </no-ssr>

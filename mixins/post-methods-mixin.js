@@ -2,7 +2,7 @@ export default {
   methods: {
     getFeaturedImage(media) {
       if (media === 0) return ''
-      return `https://api.jacob.engineer/blog/media/${media}/mime`
+      return `https://api.jacob.engineer/blog/media/${media}`
     },
     getPostNumber(idx) {
       return `Post #${this.posts.length - idx}`
