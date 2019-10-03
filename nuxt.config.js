@@ -32,7 +32,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/vue-masonry', ssr: false },
+    '~/plugins/vue-moment'
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -58,7 +61,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: "https://api.jacob.engineer/"
+  },
   /*
    ** Build configuration
    */
