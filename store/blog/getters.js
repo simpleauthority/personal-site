@@ -9,5 +9,13 @@ export default {
     return (slug) => {
       return _.find(state.posts, post => post.slug === slug)
     }
+  },
+
+  getCategories(state) {
+    return state.categories
+  },
+
+  getTags(state) {
+    return state.tags
   }
 }
