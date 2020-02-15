@@ -62,7 +62,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://api.jacob.engineer/"
+    baseURL: "https://api.jacobandersen.dev/"
   },
   /*
    ** Build configuration
