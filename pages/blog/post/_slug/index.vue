@@ -23,18 +23,6 @@ import ApiHelperMixin from '../../../../mixins/api-helper-mixin'
 
 export default {
   mixins: [ApiHelperMixin],
-  head() {
-    return {
-      title: `${this.post.title} | Jacob Andersen's Blog`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `Check out Jacob's Post "${this.post.title}" on https://jacob.engineer`
-        }
-      ]
-    }
-  },
   validate({ params }) {
     return /^[A-z0-9-_]*$/.test(params.slug)
   },

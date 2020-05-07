@@ -1,6 +1,12 @@
 export default {
   async nuxtServerInit({ dispatch }) {
-    // await dispatch('blog/loadPostsRequest')
-    // await dispatch('portfolio/loadPortfolioItemsRequest')
+    await dispatch('siteInfoRequest')
+  },
+
+  async siteInfoRequest({ commit }) {
+    const info = await this.$axios.$get('cms/info')
+    if (info) {
+      commit('setSiteInfo', info)
+    }
   }
 }

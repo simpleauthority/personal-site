@@ -149,19 +149,6 @@ export default {
     ResumeEntry,
     IndentableParagraph,
     IndentableList
-  },
-
-  head() {
-    return {
-      title: "Jacob Andersen's Resume",
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: "Read Jacob Andersen's resume and hire him (please)!"
-        }
-      ]
-    }
   }
 }
 </script>

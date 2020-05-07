@@ -33,18 +33,6 @@ import PortfolioEntry from '../components/portfolio/PortfolioEntry'
 export default {
   components: { PortfolioEntry },
   mixins: [ApiHelperMixin],
-  head() {
-    return {
-      title: "Jacob Andersen's Portfolio",
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Check out the (super cool) things Jacob has made.'
-        }
-      ]
-    }
-  },
   computed: {
     ...mapState({
       items: state => state.portfolio.items

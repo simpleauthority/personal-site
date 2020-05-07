@@ -1,3 +1,3 @@
 export default () => ({
-  items: []
+  site_info: {}
 })
