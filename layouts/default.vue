@@ -12,19 +12,19 @@ import SiteNavbar from '../components/SiteNavbar.vue'
 export default {
   head() {
     return {
-      title: this.getSiteMeta.title,
+      title: 'Jacob Andersen',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.getSiteMeta.description
+          content: 'A description'
         }
       ],
       link: [
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: this.getSiteImages.icon
+          href: '#'
         }
       ]
     }

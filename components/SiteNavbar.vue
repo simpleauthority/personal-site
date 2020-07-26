@@ -10,10 +10,10 @@
         <b-nav-item to="/resume">
           Resume
         </b-nav-item>
-        <b-nav-item to="/portfolio">
+        <b-nav-item href="#">
           Portfolio
         </b-nav-item>
-        <b-nav-item to="/blog">
+        <b-nav-item href="#">
           Blog
         </b-nav-item>
       </b-navbar-nav>
