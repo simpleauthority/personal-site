@@ -1,8 +1,5 @@
 export default {
   mode: 'universal',
-  server: {
-    port: 1337
-  },
   /*
    ** Headers of the page
    */
@@ -56,6 +53,12 @@ export default {
    */
   axios: {
     baseURL: "https://api.jacobandersen.dev/"
+  },
+  /*
+   ** Server settings
+   */
+  server: {
+    host: '0.0.0.0'
   },
   /*
    ** Build configuration
