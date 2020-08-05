@@ -22,15 +22,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import BlogPostShard from '../../components/blog/BlogPostShard'
 
 export default {
   components: { BlogPostShard },
-  computed: {
-    ...mapState({
-      posts: state => state.blog.posts
-    })
+  async asyncData({ app }) {
+    return {
+      posts: (await app.$strapi['$blog-posts'].find())
+    }
   }
 }
 </script>

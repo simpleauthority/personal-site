@@ -32,9 +32,8 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/strapi',
     [
       'nuxt-fontawesome',
       {
@@ -48,11 +47,12 @@ export default {
     ]
   ],
   /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
+   ** Strapi module configuration
+   ** See https://strapi.nuxtjs.org/options
    */
-  axios: {
-    baseURL: "https://api.jacobandersen.dev/"
+  strapi: {
+    url: 'https://cms.jacobandersen.dev',
+    entities: ['resume', 'portfolio-items', 'blog-posts', 'blog-post-tags']
   },
   /*
    ** Server settings

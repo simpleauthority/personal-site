@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 import SiteNavbar from '../components/SiteNavbar.vue'
 
 export default {
@@ -29,13 +28,7 @@ export default {
       ]
     }
   },
-  components: { SiteNavbar },
-  computed: {
-    ...mapGetters([
-      'getSiteMeta',
-      'getSiteImages'
-    ])
-  }
+  components: { SiteNavbar }
 }
 </script>
 

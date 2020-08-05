@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import defaultPortfolioImage from '../../assets/default-portfolio-image.png'
+import defaultPortfolioImage from '~/assets/default-portfolio-image.png'
 
 export default {
   name: 'PortfolioEntry',

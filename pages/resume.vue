@@ -2,12 +2,12 @@
   <div>
     <header class="page-header">
       <h1>
-        Jacob Andersen
+        {{ full_name }}
       </h1>
       <h2>
         <ContactInformationLine
-          email="jacob@algorithmjunkie.com"
-          phone="805-345-6098"
+          :email="email"
+          :phone="phone_number"
         />
       </h2>
     </header>
@@ -21,9 +21,7 @@
               </template>
               <template #content>
                 <p>
-                  Seeking a challenging position in the development field where
-                  I am able to apply innovative technologies to create or
-                  improve provided services.
+                  {{ current_goal }}
                 </p>
               </template>
             </ResumeSection>
@@ -35,18 +33,7 @@
               </template>
               <template #content>
                 <SimpleListGroup
-                  :items="[
-                    'Javascript, jQuery, Cash, & Zepto',
-                    'React, Vue, & Angular',
-                    'Redux & Vuex',
-                    'CSS, SASS, & LESS',
-                    'NPM, Yarn, Bower, & Webpack',
-                    'Git, Subversion, & Mercurial',
-                    'Agile, Scrum, & Kanban',
-                    'XML, HTML, HAML, & SLIM',
-                    'IntelliJ IDE & Visual Studio Code',
-                    'Polling, SSE, & Websockets'
-                  ]"
+                  :items="mapObjectsToFields(relevant_skills, 'content')"
                 />
               </template>
             </ResumeSection>
@@ -58,48 +45,8 @@
               </template>
               <template #content>
                 <SimpleListGroup
-                  :items="[
-                    'Java, .NET Core, C#, PHP, & Python',
-                    'Batch, Bash, & ZSH',
-                    'Maven & Gradle Build Systems',
-                    'Continuous Integration',
-                    'Automated Unit Testing (TDD)',
-                    'Code Hotswapping & Hot-Reloading',
-                    'REST, JWT, Oauth2, & Sessions',
-                    'MySQL, MongoDB, & SQL Server',
-                    'Apache, Nginx, & IIS',
-                    'Windows & Linux Administration'
-                  ]"
+                  :items="mapObjectsToFields(other_skills, 'content')"
                 />
-              </template>
-            </ResumeSection>
-          </b-col>
-          <b-col cols="12">
-            <ResumeSection>
-              <template #header>
-                Education
-              </template>
-              <template #content>
-                <ResumeEntry title="Associate of Arts: Computer Science">
-                  <template #content>
-                    <IndentableParagraph
-                      :items="[
-                        'August 2017 &ndash; Present',
-                        'Allan Hancock College &mdash; Santa Maria, California'
-                      ]"
-                    />
-                  </template>
-                </ResumeEntry>
-                <ResumeEntry title="High School Diploma">
-                  <template #content>
-                    <IndentableParagraph
-                      :items="[
-                        'June 2016',
-                        'Ernest Righetti High School &mdash; Orcutt, California'
-                      ]"
-                    />
-                  </template>
-                </ResumeEntry>
               </template>
             </ResumeSection>
           </b-col>
@@ -109,17 +56,32 @@
                 Professional Experience
               </template>
               <template #content>
-                <ResumeEntry title="Rabobank N.A., Assistant Vice President">
+                <ResumeEntry v-for="(entry, idx) in professional_experience" :key="'job-' + idx" :title="entry.job_title + ', ' + entry.company_name">
                   <template #content>
                     <IndentableParagraph
-                      :items="['October 2017 &ndash; February 2019']"
+                      :items="[prettifyDates(entry.start_date, entry.end_date)]"
                     />
                     <IndentableList
                       :out="true"
+                      :items="mapObjectsToFields(entry.highlights, 'content')"
+                    />
+                  </template>
+                </ResumeEntry>
+              </template>
+            </ResumeSection>
+          </b-col>
+          <b-col cols="12">
+            <ResumeSection>
+              <template #header>
+                Education
+              </template>
+              <template #content>
+                <ResumeEntry v-for="(entry, idx) in education" :key="'education-' + idx" :title="entry.program_name">
+                  <template #content>
+                    <IndentableParagraph
                       :items="[
-                        'Made use of the .NET OnBase API to create custom solutions to major business-line pain points including document routing and custom processing.',
-                        'Provided support and bug-fixes of custom .NET applications within OnBase spanning different departments such as loan operations and corporate security.',
-                        'Established new OnBase virtualized architecture to reduce manual workload required to fail over in emergency situations.'
+                        prettifyDates(entry.start_date, entry.end_date),
+                        entry.school_name + ' &mdash; ' + entry.location
                       ]"
                     />
                   </template>
@@ -140,6 +102,7 @@ import SimpleListGroup from '../components/resume/SimpleListGroup'
 import ResumeEntry from '../components/resume/ResumeEntry'
 import IndentableParagraph from '../components/resume/IndentableParagraph'
 import IndentableList from '../components/resume/IndentableList'
+import DateMixin from '~/mixins/date-mixin'
 
 export default {
   components: {
@@ -149,6 +112,26 @@ export default {
     ResumeEntry,
     IndentableParagraph,
     IndentableList
+  },
+  mixins: [DateMixin],
+  computed: {
+    relevantSkillsMapped() {
+      return this.mapObjectsToFields(this.relevant_skills, 'content')
+    },
+    otherSkillsMapped() {
+      return this.mapObjectsToFields(this.other_skills, 'content')
+    }
+  },
+  async asyncData({ app }) {
+    return await app.$strapi.$resume.find()
+  },
+  methods: {
+    mapObjectsToFields(arr, field) {
+      return arr.map(obj => obj[field])
+    },
+    prettifyDates(start, end) {
+      return this.formatShort(start) + ' &ndash; ' + (end ? this.formatShort(end) : 'Present')
+    }
   }
 }
 </script>
