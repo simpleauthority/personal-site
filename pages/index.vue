@@ -2,7 +2,7 @@
   <section class="opener">
     <div class="opener-text">
       <h1 class="animated fadeInDown delay-1s">
-        Oh, hey there.
+        Oh, hello there.
       </h1>
       <h2 class="animated fadeIn delay-2s">
         My name is Jacob. I make cool stuff on the computer.
