@@ -1,5 +1,4 @@
 export default {
-  mode: 'universal',
   /*
    ** Headers of the page
    */
@@ -17,7 +16,7 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/gcss/formatting.scss'
+    '~/assets/formatting.scss'
   ],
   /*
    ** Plugins to load before mounting the App
