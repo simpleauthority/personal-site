@@ -1,5 +1,4 @@
 export default {
-  mode: 'universal',
   /*
    ** Headers of the page
    */
@@ -17,8 +16,15 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/gcss/formatting.scss'
+    '~/assets/formatting.scss'
   ],
+  /**
+   * Transitioning between layouts
+   */
+  layoutTransition: {
+    name: 'layout',
+    mode: 'out-in'
+  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -52,7 +58,7 @@ export default {
    */
   strapi: {
     url: 'https://cms.jacobandersen.dev',
-    entities: ['resume', 'portfolio-items', 'blog-posts', 'blog-post-tags']
+    entities: ['resume', 'about', 'portfolio-items', 'blog-posts', 'blog-post-tags']
   },
   /*
    ** Server settings

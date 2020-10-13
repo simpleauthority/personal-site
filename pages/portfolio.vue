@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="page-header">
+    <header class="text-center mb-4">
       <h1>Cool Things I've Made</h1>
     </header>
     <main>
@@ -11,6 +11,7 @@
             :key="'item-' + idx"
             :title="item.project_title"
             :href="item.project_url"
+            :image="item.project_image.url"
           >
             {{ item.project_description }}
           </PortfolioEntry>
@@ -24,6 +25,8 @@
 import PortfolioEntry from '../components/portfolio/PortfolioEntry'
 
 export default {
+  layout: 'page',
+  transition: 'page',
   components: { PortfolioEntry },
   async asyncData({ app }) {
     return {

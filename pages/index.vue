@@ -1,74 +1,121 @@
 <template>
-  <section class="opener">
-    <div class="opener-text">
-      <h1 class="animated fadeInDown delay-1s">
-        Oh, hello there.
-      </h1>
-      <h2 class="animated fadeIn delay-2s">
-        My name is Jacob. I make cool stuff on the computer.
-      </h2>
-    </div>
+  <section>
+    <h1 class="text-title">
+      Hi, I'm Jacob.
+    </h1>
+
+    <h2 class="text-subtitle">
+      I'm a future engineer.
+    </h2>
+
+    <h3 class="text-subtitle">
+      If you'd like, you can:
+    </h3>
+
+    <Nav />
   </section>
 </template>
 
-<style lang="scss">
-@import 'assets/animate.css';
+<script>
+import Nav from '~/components/Nav'
 
-.opener {
+export default {
+  components: { Nav },
+  head() {
+    return {
+      title: 'Jacob Andersen',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'A description'
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '#'
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+section {
   width: 100%;
-  height: calc(100vh - 56px);
-  background-image: url('~assets/nasa-backdrop.jpg');
-  background-size: cover;
-  background-position: center;
 
-  .opener-text {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    text-align: center;
-    color: rgba(230, 230, 230, 0.65);
+  text-align: center;
 
-    h1 {
-      font-size: 3rem;
+  h1 {
+    font-size: 1rem;
 
-      @media (min-width: 576px) {
-        font-size: 4.5rem;
-      }
-
-      @media (min-width: 768px) {
-        font-size: 6rem;
-      }
-
-      @media (min-width: 992px) {
-        font-size: 8rem;
-      }
-
-      @media (min-width: 1200px) {
-        font-size: 10rem;
-      }
+   @media (min-width: 576px) {
+      font-size: 2.5rem;
     }
 
-    h2 {
+   @media (min-width: 768px) {
+      font-size: 4rem;
+    }
+
+   @media (min-width: 992px) {
+      font-size: 6rem;
+    }
+
+   @media (min-width: 1200px) {
+      font-size: 7rem;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  h2 {
+    font-size: 0.75rem;
+    color: #4F5253;
+
+    @media (min-width: 576px) {
+      font-size: 1.35rem;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.9rem;
+    }
+
+    @media (min-width: 992px) {
+      font-size: 2.6rem;
+    }
+
+    @media (min-width: 1200px) {
+      font-size: 2.9rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  h3 {
+    font-size: 0.5rem;
+    color: #5F6F75;
+
+    @media (min-width: 576px) {
+      font-size: 0.6rem;
+    }
+
+    @media (min-width: 768px) {
       font-size: 0.75rem;
+    }
 
-      @media (min-width: 576px) {
-        font-size: 1.35rem;
-      }
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
 
-      @media (min-width: 768px) {
-        font-size: 1.9rem;
-      }
-
-      @media (min-width: 992px) {
-        font-size: 2.6rem;
-      }
-
-      @media (min-width: 1200px) {
-        font-size: 3rem;
-      }
+    @media (min-width: 1200px) {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
     }
   }
 }

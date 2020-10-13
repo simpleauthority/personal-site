@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="page-header">
+    <header class="text-center mb-4">
       <h1>
         {{ full_name }}
       </h1>
@@ -11,7 +11,7 @@
         />
       </h2>
     </header>
-    <main>
+    <section>
       <b-container>
         <b-row>
           <b-col cols="12">
@@ -91,7 +91,7 @@
           </b-col>
         </b-row>
       </b-container>
-    </main>
+    </section>
   </div>
 </template>
 
@@ -105,6 +105,8 @@ import IndentableList from '../components/resume/IndentableList'
 import DateMixin from '~/mixins/date-mixin'
 
 export default {
+  layout: 'page',
+  transition: 'page',
   components: {
     ContactInformationLine,
     ResumeSection,
@@ -135,3 +137,6 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+</style>
