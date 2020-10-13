@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
     .nav {
-        margin: 1rem auto 2rem auto;
-        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 </style>

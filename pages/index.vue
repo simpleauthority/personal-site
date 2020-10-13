@@ -55,40 +55,48 @@ section {
   text-align: center;
 
   h1 {
-    font-size: 1rem;
+    font-size: 2.9rem;
+    margin-bottom: 0.8rem;
 
    @media (min-width: 576px) {
-      font-size: 2.5rem;
+      font-size: 5rem;
+      margin-bottom: 0.87rem;
     }
 
    @media (min-width: 768px) {
-      font-size: 4rem;
+      font-size: 5.3rem;
+      margin-bottom: 0.95rem;
     }
 
    @media (min-width: 992px) {
       font-size: 6rem;
+      margin-bottom: 1rem;
     }
 
    @media (min-width: 1200px) {
       font-size: 7rem;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
     }
   }
 
   h2 {
-    font-size: 0.75rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
     color: #4F5253;
 
     @media (min-width: 576px) {
-      font-size: 1.35rem;
+      font-size: 1.95rem;
+      margin-bottom: 1.75rem;
     }
 
     @media (min-width: 768px) {
-      font-size: 1.9rem;
+      font-size: 2.25rem;
+      margin-bottom: 1.8rem;
     }
 
     @media (min-width: 992px) {
       font-size: 2.6rem;
+      margin-bottom: 2.3rem;
     }
 
     @media (min-width: 1200px) {
@@ -98,19 +106,23 @@ section {
   }
 
   h3 {
-    font-size: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     color: #5F6F75;
 
     @media (min-width: 576px) {
-      font-size: 0.6rem;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     @media (min-width: 768px) {
-      font-size: 0.75rem;
+      font-size: 1.25rem;
+      margin-bottom: 1.3rem;
     }
 
     @media (min-width: 992px) {
-      font-size: 1rem;
+      font-size: 1.5rem;
+      margin-bottom: 1.3rem;
     }
 
     @media (min-width: 1200px) {

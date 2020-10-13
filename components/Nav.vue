@@ -28,11 +28,11 @@ export default {
           text: 'See my resume'
         },
         {
-          path: 'Portfolio',
+          path: 'portfolio',
           text: 'Peruse my work'
         },
         {
-          path: 'Blog',
+          path: 'blog',
           text: 'Read my blog'
         }
       ]
@@ -46,43 +46,102 @@ export default {
       return !!this.currentPage && this.currentPage !== ''
     },
     pages() {
-      return this.items.filter(item => !this.isCurrentPage(item.path))
+      const items = this.items.filter(item => !this.isCurrentPage(item.path))
+      if (this.isBlogPost()) {
+        items.pop()
+      }
+      return items
     }
   },
   methods: {
     isCurrentPage(path) {
       return this.currentPage === path
+    },
+    isBlogPost() {
+      return this.currentPage.startsWith('blog/post')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-  nav {
+nav {
     ul {
         margin: 0 auto;
-      list-style-type: none;
-      font-size: 1rem;
-      color: #ffffff;
-      font-weight: 300;
+        list-style-type: none;
+        color: #ffffff;
+        font-weight: 300;
+        font-size: 0.9rem;
+        padding: 0;
+        text-align: center;
 
-      a {
-        color: inherit;
-        text-decoration: none;
+        a {
+            color: inherit;
+            text-decoration: none;
 
-        li {
-          display: inline-block;
-          background: #0B485B;
-          padding: 15px;
-          margin-right: 25px;
-          border-radius: 6px;
-          width: 12rem;
+            li {
+                display: inline-block;
+                background: #0B485B;
+                padding: 10px;
+                margin-right: 12px;
+                margin-bottom: 6px;
+                border-radius: 6px;
+                width: 13rem;
 
-          &:hover {
-            background: #0d556b;
-          }
+                &:hover {
+                  background: #0d556b;
+                }
+            }
         }
-      }
+
+        @media (min-width: 576px) {
+            font-size: 1rem;
+
+            a {
+                li {
+                    padding: 10px;
+                    margin-right: 12px;
+                    margin-bottom: 12px;
+                    width: 15rem;
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            font-size: 0.95rem;
+
+            a {
+                li {
+                    padding: 12px;
+                    margin-right: 18px;
+                    width: 19rem;
+                }
+            }
+        }
+
+        @media (min-width: 992px) {
+            font-size: 1rem;
+
+            a {
+                li {
+                    padding: 13.5px;
+                    margin-right: 23px;
+                    width: 11rem;
+                }
+            }
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 1rem;
+
+            a {
+                li {
+                    padding: 15px;
+                    margin-right: 25px;
+                    width: 12rem;
+                }
+            }
+        }
     }
-  }
+}
 </style>

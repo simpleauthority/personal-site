@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="page-header">
+    <header class="text-center mb-4">
       <h1>{{ post.post_title }}</h1>
       <h2>
         {{ formatLong(post.posted) }}
@@ -24,6 +24,7 @@ import html from 'remark-html'
 import DateMixin from '~/mixins/date-mixin'
 
 export default {
+  layout: 'page',
   mixins: [DateMixin],
   validate({ params }) {
     return /^[A-z0-9-_]*$/.test(params.slug)
@@ -76,7 +77,6 @@ export default {
 body {
   .fullpost {
     margin-bottom: 30px;
-    color: #ccc;
 
     .go-back {
       display: block;
