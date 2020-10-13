@@ -1,10 +1,7 @@
 <template>
   <div>
-    <header class="page-header">
+    <header class="text-center mb-4">
       <h1>My Scribblings</h1>
-      <h2>
-        &lt;3. I love you!
-      </h2>
     </header>
     <main class="posts">
       <b-container>
@@ -25,6 +22,7 @@
 import BlogPostShard from '../../components/blog/BlogPostShard'
 
 export default {
+  layout: 'page',
   components: { BlogPostShard },
   async asyncData({ app }) {
     return {

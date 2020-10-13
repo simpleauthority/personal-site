@@ -19,7 +19,9 @@
           :href="href"
           target="_blank"
         >
-          <p>{{ linkText }}</p>
+          <p class="link-text">
+            {{ linkText }}
+          </p>
         </b-button>
       </template>
     </b-card>
@@ -27,8 +29,6 @@
 </template>
 
 <script>
-import defaultPortfolioImage from '~/assets/default-portfolio-image.png'
-
 export default {
   name: 'PortfolioEntry',
   props: {
@@ -38,7 +38,7 @@ export default {
     },
     image: {
       type: String,
-      default: defaultPortfolioImage
+      default: ''
     },
     alt: {
       type: String,
@@ -108,5 +108,9 @@ export default {
     bottom: 0;
     width: 100%;
   }
+
+    .link-text {
+      margin-top: 1rem;
+    }
 }
 </style>

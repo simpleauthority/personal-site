@@ -12,32 +12,36 @@
       If you'd like, you can:
     </h3>
 
-    <nav>
-      <ul>
-        <nuxt-link to="/about">
-          <li>
-            Learn about me
-          </li>
-        </nuxt-link>
-        <nuxt-link to="/resume">
-          <li>
-            See my resume
-          </li>
-        </nuxt-link>
-        <nuxt-link to="/portfolio">
-          <li>
-            Peruse my work
-          </li>
-        </nuxt-link>
-        <nuxt-link to="/blog">
-          <li>
-            Read my blog
-          </li>
-        </nuxt-link>
-      </ul>
-    </nav>
+    <Nav />
   </section>
 </template>
+
+<script>
+import Nav from '~/components/Nav'
+
+export default {
+  components: { Nav },
+  head() {
+    return {
+      title: 'Jacob Andersen',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'A description'
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '#'
+        }
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 section {
@@ -112,33 +116,6 @@ section {
     @media (min-width: 1200px) {
       font-size: 1.8rem;
       margin-bottom: 2rem;
-    }
-  }
-
-  nav {
-    ul {
-      list-style-type: none;
-      font-size: 1rem;
-      color: #ffffff;
-      font-weight: 300;
-
-      a {
-        color: inherit;
-        text-decoration: none;
-
-        li {
-          display: inline-block;
-          background: #0B485B;
-          padding: 15px;
-          margin-right: 25px;
-          border-radius: 6px;
-          width: 12rem;
-
-          &:hover {
-            background: #0d556b;
-          }
-        }
-      }
     }
   }
 }
