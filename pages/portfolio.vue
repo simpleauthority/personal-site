@@ -27,6 +27,18 @@ import PortfolioEntry from '../components/portfolio/PortfolioEntry'
 export default {
   layout: 'page',
   transition: 'page',
+  head() {
+    return {
+      title: 'Jacob Andersen\'s Portfolio',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Engineer-in-progress'
+        }
+      ]
+    }
+  },
   components: { PortfolioEntry },
   async asyncData({ app }) {
     return {

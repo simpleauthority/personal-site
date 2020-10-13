@@ -24,6 +24,18 @@ import BlogPostShard from '../../components/blog/BlogPostShard'
 export default {
   layout: 'page',
   components: { BlogPostShard },
+  head() {
+    return {
+      title: 'Jacob Andersen\'s Blog',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Engineer-in-progress'
+        }
+      ]
+    }
+  },
   async asyncData({ app }) {
     return {
       posts: (await app.$strapi['$blog-posts'].find())

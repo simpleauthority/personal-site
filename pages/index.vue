@@ -28,14 +28,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'A description'
-        }
-      ],
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '#'
+          content: 'Engineer-in-progress'
         }
       ]
     }

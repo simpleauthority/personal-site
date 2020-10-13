@@ -25,6 +25,18 @@ import DateMixin from '~/mixins/date-mixin'
 
 export default {
   layout: 'page',
+  head() {
+    return {
+      title: this.post.post_title + ' - Jacob Andersen\'s Blog',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Engineer-in-progress'
+        }
+      ]
+    }
+  },
   mixins: [DateMixin],
   validate({ params }) {
     return /^[A-z0-9-_]*$/.test(params.slug)

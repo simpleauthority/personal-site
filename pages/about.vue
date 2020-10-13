@@ -19,6 +19,18 @@ import html from 'remark-html'
 export default {
   layout: 'page',
   transition: 'page',
+  head() {
+    return {
+      title: 'About Jacob Andersen',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Engineer-in-progress'
+        }
+      ]
+    }
+  },
   async asyncData({ app, error }) {
     const about = await app.$strapi.$about.find()
 

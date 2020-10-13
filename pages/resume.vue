@@ -107,6 +107,18 @@ import DateMixin from '~/mixins/date-mixin'
 export default {
   layout: 'page',
   transition: 'page',
+  head() {
+    return {
+      title: 'Jacob Andersen\'s Resume',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Engineer-in-progress'
+        }
+      ]
+    }
+  },
   components: {
     ContactInformationLine,
     ResumeSection,
