@@ -78,7 +78,7 @@ export default {
   }
 
   .card-img-top {
-    min-height: 150px;
+    height: 14rem;
   }
 
   .card-text {
