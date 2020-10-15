@@ -86,8 +86,8 @@ export default {
    ** See https://strapi.nuxtjs.org/options
    */
   strapi: {
-    //url: 'https://cms.jacobandersen.dev',
-    url: 'http://localhost:1337',
+    url: 'https://cms.jacobandersen.dev',
+    // url: 'http://localhost:1337',
     entities: ['resume', 'about', 'portfolio-items', 'blog-posts', 'blog-post-tags']
   },
   /*
