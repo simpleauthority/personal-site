@@ -210,7 +210,7 @@ body {
 
           .checkmark {
             position: absolute;
-            top: 12px;
+            top: 12tpx;
             left: 0;
             height: 35px;
             width: 35px;
