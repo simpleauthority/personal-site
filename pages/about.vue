@@ -3,7 +3,7 @@
     <header class="text-center mb-4">
       <h1>About Me</h1>
     </header>
-    <main>
+    <main class="editorjs-output">
       <b-container>
         <!-- eslint-disable-next-line vue/no-v-html -->
         <section v-for="(block, idx) in content" :key="'about-block-' + idx" v-html="block" />
