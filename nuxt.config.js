@@ -58,7 +58,8 @@ export default {
    */
   plugins: [
     { src: '~/plugins/vue-masonry', ssr: false },
-    '~/plugins/vue-moment'
+    '~/plugins/vue-moment',
+    '~/plugins/editorjs'
   ],
   /*
    ** Nuxt.js modules
@@ -85,7 +86,8 @@ export default {
    ** See https://strapi.nuxtjs.org/options
    */
   strapi: {
-    url: 'https://cms.jacobandersen.dev',
+    //url: 'https://cms.jacobandersen.dev',
+    url: 'http://localhost:1337',
     entities: ['resume', 'about', 'portfolio-items', 'blog-posts', 'blog-post-tags']
   },
   /*
