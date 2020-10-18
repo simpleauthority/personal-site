@@ -74,7 +74,7 @@ body {
   .fullpost {
     .go-back {
       display: block;
-      width: 48rem;
+      width: 100%;
       margin: 40px 0 20px 0;
     }
   }

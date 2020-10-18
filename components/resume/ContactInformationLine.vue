@@ -1,9 +1,9 @@
 <template>
   <span>
-    <EmailLink :email="email" />
-    <span class="d-none d-sm-inline">&mdash;</span>
-    <span class="d-block d-sm-none" />
-    <PhoneLink :phone="phone" />
+    <EmailLink class="email" :email="email" />
+    <span class="d-none d-lg-inline">&mdash;</span>
+    <span class="d-block d-lg-none" />
+    <PhoneLink class="phone" :phone="phone" />
   </span>
 </template>
 
@@ -26,3 +26,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.email {
+  font-size: 1.25rem;
+
+  @media (min-width: 576px) {
+    font-size: 2rem;
+    margin-bottom: 0.87rem;
+  }
+}
+</style>

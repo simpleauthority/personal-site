@@ -71,13 +71,11 @@ const customParsers = {
     const data = block.data
     switch (data.service) {
       case 'youtube':
-        return `<iframe class="media-embed" style="min-height: ${data.height}px;" src="${data.embed}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+        return `<iframe class="media-embed" height="${data.height}" width="${data.width}" src="${data.embed}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
       case 'codepen':
-        return `<iframe class="media-embed" style="min-height: ${data.height}px;"  scrolling="no" src="${data.embed}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">${data.caption}</iframe>`
+        return `<iframe class="media-embed" height="${data.height}" width="${data.width}"  scrolling="no" src="${data.embed}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">${data.caption}</iframe>`
       case 'gfycat':
-        return `<iframe class="media-embed" style="min-height: ${data.height}px;" src="${data.embed}" frameborder='0' scrolling='no' allowfullscreen></iframe>`
-      case 'instagram':
-        return `<iframe class="media-embed" style="min-height: ${data.height + 20}px;" src="${data.embed}" border="0" frameborder="0"></iframe>`
+        return `<iframe class="media-embed" height="${data.height}" width="${data.width}" src="${data.embed}" frameborder='0' scrolling='no' allowfullscreen></iframe>`
     }
   },
   delimiter: () => {
