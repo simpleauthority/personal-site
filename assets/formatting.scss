@@ -89,6 +89,12 @@ h1, h2, h3, h4, h5, h6 {
               display: block;
               margin: 10px 0 5px 0;
               font-size: 0.75rem;
+              width: 85%;
+              word-wrap: break-word;
+
+              @media (min-width: 1200px) {
+                font-size: 1rem;
+              }
             }
 
             &.positioned-caption {
