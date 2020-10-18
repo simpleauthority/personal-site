@@ -38,7 +38,7 @@ export default {
   },
   async asyncData({ app }) {
     return {
-      posts: (await app.$strapi['$blog-posts'].find())
+      posts: (await app.$strapi['$blog-posts'].find()).reverse()
     }
   }
 }
