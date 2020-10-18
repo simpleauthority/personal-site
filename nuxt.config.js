@@ -59,7 +59,8 @@ export default {
   plugins: [
     { src: '~/plugins/vue-masonry', ssr: false },
     '~/plugins/vue-moment',
-    '~/plugins/editorjs'
+    '~/plugins/editorjs',
+    '~/plugins/vue-disqus'
   ],
   /*
    ** Nuxt.js modules

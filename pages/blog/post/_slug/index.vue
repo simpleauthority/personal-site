@@ -13,6 +13,7 @@
         <b-button to="/blog" variant="info" block class="go-back">
           Go back to all posts
         </b-button>
+        <Disqus />
       </b-container>
     </main>
   </div>
