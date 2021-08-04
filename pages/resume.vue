@@ -83,9 +83,14 @@
                   <template #content>
                     <IndentableParagraph
                       :items="[
+                        `Cumulative GPA: ${entry.cum_gpa}`,
                         prettifyDates(entry.start_date, entry.end_date),
                         entry.school_name + ' &mdash; ' + entry.location,
                       ]"
+                    />
+                    <IndentableList
+                      :out="true"
+                      :items="entry.highlights"
                     />
                   </template>
                 </ResumeEntry>
@@ -139,7 +144,7 @@ export default {
       return (
         this.formatShort(start) +
         ' &ndash; ' +
-        (end ? this.formatShort(end) : 'Present')
+        (end ? this.formatShort(end) : 'Ongoing')
       )
     }
   }
