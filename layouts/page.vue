@@ -17,8 +17,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .nav {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-    }
+.nav {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
 </style>

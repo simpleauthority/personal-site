@@ -43,9 +43,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [
-    '~/assets/formatting.scss'
-  ],
+  css: ['~/assets/formatting.scss'],
   /**
    * Transitioning between layouts
    */
@@ -59,8 +57,8 @@ export default {
   plugins: [
     { src: '~/plugins/vue-masonry', ssr: false },
     '~/plugins/vue-moment',
-    '~/plugins/editorjs',
-    '~/plugins/vue-disqus'
+    '~/plugins/vue-disqus',
+    '~/plugins/directus'
   ],
   /*
    ** Nuxt.js modules
@@ -68,7 +66,6 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
-    '@nuxtjs/eslint-module',
     [
       'nuxt-fontawesome',
       {
@@ -78,6 +75,17 @@ export default {
             icons: ['fas']
           }
         ]
+      }
+    ]
+  ],
+  /**
+   * Nuxt.js modules used in buiild process only
+   */
+  buildModules: [
+    [
+      '@nuxtjs/eslint-module',
+      {
+        fix: true
       }
     ]
   ],
@@ -94,18 +102,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-          options: {
-            fix: true
-          }
-        })
-      }
-    }
+    extend (config, ctx) {}
   }
 }

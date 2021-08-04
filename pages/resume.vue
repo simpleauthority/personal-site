@@ -5,10 +5,7 @@
         {{ full_name }}
       </h1>
       <h2>
-        <ContactInformationLine
-          :email="email"
-          :phone="phone_number"
-        />
+        <ContactInformationLine :email="email" :phone="phone_number" />
       </h2>
     </header>
     <section>
@@ -20,9 +17,7 @@
                 Current Goal
               </template>
               <template #content>
-                <p>
-                  {{ current_goal }}
-                </p>
+                <div v-html="current_goal" />
               </template>
             </ResumeSection>
           </b-col>
@@ -33,7 +28,7 @@
               </template>
               <template #content>
                 <SimpleListGroup
-                  :items="mapObjectsToFields(relevant_skills, 'content')"
+                  :items="relevant_skills"
                 />
               </template>
             </ResumeSection>
@@ -45,7 +40,7 @@
               </template>
               <template #content>
                 <SimpleListGroup
-                  :items="mapObjectsToFields(other_skills, 'content')"
+                  :items="other_skills"
                 />
               </template>
             </ResumeSection>
@@ -56,14 +51,18 @@
                 Professional Experience
               </template>
               <template #content>
-                <ResumeEntry v-for="(entry, idx) in professional_experience" :key="'job-' + idx" :title="entry.job_title + ', ' + entry.company_name">
+                <ResumeEntry
+                  v-for="(entry, idx) in professional_experience"
+                  :key="'job-' + idx"
+                  :title="entry.job_title + ', ' + entry.company_name"
+                >
                   <template #content>
                     <IndentableParagraph
                       :items="[prettifyDates(entry.start_date, entry.end_date)]"
                     />
                     <IndentableList
                       :out="true"
-                      :items="mapObjectsToFields(entry.highlights, 'content')"
+                      :items="entry.highlights"
                     />
                   </template>
                 </ResumeEntry>
@@ -76,12 +75,16 @@
                 Education
               </template>
               <template #content>
-                <ResumeEntry v-for="(entry, idx) in education" :key="'education-' + idx" :title="entry.program_name">
+                <ResumeEntry
+                  v-for="(entry, idx) in education"
+                  :key="'education-' + idx"
+                  :title="entry.program_name"
+                >
                   <template #content>
                     <IndentableParagraph
                       :items="[
                         prettifyDates(entry.start_date, entry.end_date),
-                        entry.school_name + ' &mdash; ' + entry.location
+                        entry.school_name + ' &mdash; ' + entry.location,
                       ]"
                     />
                   </template>
@@ -105,20 +108,6 @@ import IndentableList from '../components/resume/IndentableList'
 import DateMixin from '~/mixins/date-mixin'
 
 export default {
-  layout: 'page',
-  transition: 'page',
-  head() {
-    return {
-      title: 'Jacob Andersen\'s Resume',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Engineer-in-progress'
-        }
-      ]
-    }
-  },
   components: {
     ContactInformationLine,
     ResumeSection,
@@ -128,27 +117,31 @@ export default {
     IndentableList
   },
   mixins: [DateMixin],
-  computed: {
-    relevantSkillsMapped() {
-      return this.mapObjectsToFields(this.relevant_skills, 'content')
-    },
-    otherSkillsMapped() {
-      return this.mapObjectsToFields(this.other_skills, 'content')
+  layout: 'page',
+  transition: 'page',
+  async asyncData ({ $single }) {
+    return await $single('resume').read()
+  },
+  head () {
+    return {
+      title: "Jacob Andersen's Resume",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Computer Scientist in progress'
+        }
+      ]
     }
   },
-  async asyncData({ app }) {
-    return await app.$strapi.$resume.find()
-  },
   methods: {
-    mapObjectsToFields(arr, field) {
-      return arr.map(obj => obj[field])
-    },
-    prettifyDates(start, end) {
-      return this.formatShort(start) + ' &ndash; ' + (end ? this.formatShort(end) : 'Present')
+    prettifyDates (start, end) {
+      return (
+        this.formatShort(start) +
+        ' &ndash; ' +
+        (end ? this.formatShort(end) : 'Present')
+      )
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

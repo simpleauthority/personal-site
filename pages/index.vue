@@ -5,7 +5,7 @@
     </h1>
 
     <h2 class="text-subtitle">
-      I'm a future engineer.
+      I'm a future Computer Scientist.
     </h2>
 
     <h3 class="text-subtitle">
@@ -21,14 +21,14 @@ import Nav from '~/components/Nav'
 
 export default {
   components: { Nav },
-  head() {
+  head () {
     return {
       title: 'Jacob Andersen',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Engineer-in-progress'
+          content: 'Computer Scientist in progress'
         }
       ]
     }
@@ -51,22 +51,22 @@ section {
     font-size: 2.9rem;
     margin-bottom: 0.8rem;
 
-   @media (min-width: 576px) {
+    @media (min-width: 576px) {
       font-size: 5rem;
       margin-bottom: 0.87rem;
     }
 
-   @media (min-width: 768px) {
+    @media (min-width: 768px) {
       font-size: 5.3rem;
       margin-bottom: 0.95rem;
     }
 
-   @media (min-width: 992px) {
+    @media (min-width: 992px) {
       font-size: 6rem;
       margin-bottom: 1rem;
     }
 
-   @media (min-width: 1200px) {
+    @media (min-width: 1200px) {
       font-size: 7rem;
       margin-bottom: 1.8rem;
     }
@@ -75,7 +75,7 @@ section {
   h2 {
     font-size: 1.6rem;
     margin-bottom: 1rem;
-    color: #4F5253;
+    color: #4f5253;
 
     @media (min-width: 576px) {
       font-size: 1.95rem;
@@ -101,7 +101,7 @@ section {
   h3 {
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: #5F6F75;
+    color: #5f6f75;
 
     @media (min-width: 576px) {
       font-size: 1.25rem;

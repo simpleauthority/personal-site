@@ -2,7 +2,7 @@
   <b-col cols="12" lg="6" xl="4" class="entry-container">
     <b-card
       :title="title"
-      :img-src="image"
+      :img-src="$asset(image)"
       :img-alt="alt"
       img-top
       bg-variant="light"
@@ -12,17 +12,42 @@
         <slot />
       </b-card-text>
       <template #footer>
-        <b-button
-          v-if="href !== undefined"
-          block
-          variant="dark"
-          :href="href"
-          target="_blank"
-        >
-          <p class="link-text">
-            {{ linkText }}
-          </p>
-        </b-button>
+        <div class="d-inline">
+          <b-button
+            v-if="!!href"
+            block
+            variant="dark"
+            :href="href"
+            target="_blank"
+          >
+            <p class="link-text">
+              {{ linkText }}
+            </p>
+          </b-button>
+          <b-button v-else block variant="dark" disabled>
+            <p class="link-text">
+              No demo available
+            </p>
+          </b-button>
+        </div>
+        <div class="d-inline">
+          <b-button
+            v-if="!!sourceHref"
+            block
+            variant="dark"
+            :href="sourceHref"
+            target="_blank"
+          >
+            <p class="link-text">
+              {{ sourceText }}
+            </p>
+          </b-button>
+          <b-button v-else block variant="dark" disabled>
+            <p class="link-text">
+              No source available
+            </p>
+          </b-button>
+        </div>
       </template>
     </b-card>
   </b-col>
@@ -51,6 +76,14 @@ export default {
     linkText: {
       type: String,
       default: 'See more'
+    },
+    sourceHref: {
+      type: String,
+      default: undefined
+    },
+    sourceText: {
+      type: String,
+      default: 'See the code'
     }
   }
 }
@@ -111,9 +144,9 @@ export default {
       width: 100%;
     }
 
-      .link-text {
-        margin-top: 1rem;
-      }
+    .link-text {
+      margin-top: 1rem;
+    }
   }
 }
 </style>

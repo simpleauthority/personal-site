@@ -1,24 +1,15 @@
 <template>
   <no-ssr>
-    <b-col
-      v-masonry-tile
-      cols="12"
-      lg="6"
-      xl="4"
-      class="post"
-    >
-      <b-card
-        bg-variant="light"
-        sub-title-tag="time"
-      >
+    <b-col v-masonry-tile cols="12" lg="6" xl="4" class="post">
+      <b-card bg-variant="light" sub-title-tag="time">
         <header slot="header">
           <nuxt-link :to="'/blog/post/' + post.post_slug">
             <h4>{{ post.post_title }}</h4>
           </nuxt-link>
-          <small>Post #{{ number }} &vert; {{ formatShort(post.created_at) }}</small>
+          <small>Post #{{ number }} &vert; {{ formatShort(post.date_created) }}</small>
         </header>
         <!-- eslint-disable-next-line vue/no-v-html -->
-        {{ post.post_summary }}
+        <p>Post summary coming later</p>
       </b-card>
     </b-col>
   </no-ssr>

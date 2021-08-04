@@ -3,13 +3,13 @@
     <header class="text-center mb-4">
       <h1>{{ post.post_title }}</h1>
       <h2>
-        {{ formatLong(post.posted) }}
+        {{ formatLong(post.date_created) }}
       </h2>
     </header>
     <main class="fullpost editorjs-output">
       <b-container>
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <section v-for="(block, idx) in post.post_content" :key="'post-block-' + idx" v-html="block" />
+        <div v-html="post.post_content" />
         <b-button to="/blog" variant="info" block class="go-back">
           Go back to all posts
         </b-button>
@@ -23,10 +23,24 @@
 import DateMixin from '~/mixins/date-mixin'
 
 export default {
+  mixins: [DateMixin],
   layout: 'page',
-  head() {
+  validate ({ params }) {
+    return /^[A-z0-9-]*$/.test(params.slug)
+  },
+  async asyncData ({ $items, params, error }) {
+    const post = (await $items('blog_posts').readMany({ search: params.slug })).data[0]
+
+    if (post === undefined) {
+      error({ status: 404, message: 'Unknown Post' })
+      return
+    }
+
+    return { post }
+  },
+  head () {
     return {
-      title: this.post.post_title + ' - Jacob Andersen\'s Blog',
+      title: this.post.post_title + " - Jacob Andersen's Blog",
       meta: [
         {
           hid: 'description',
@@ -35,37 +49,6 @@ export default {
         }
       ]
     }
-  },
-  mixins: [DateMixin],
-  validate({ params }) {
-    return /^[A-z0-9-_]*$/.test(params.slug)
-  },
-  async asyncData({ app, params, error }) {
-    const post = (await app.$strapi['$blog-posts'].find({
-      post_slug: params.slug,
-      _limit: 1
-    }))[0]
-
-    if (post === undefined) {
-      error({ status: 404, message: 'Unknown Post' })
-      return
-    }
-
-    try {
-      post.post_content = await (() => {
-        return app.$parseEjs(post.post_content)
-      })()
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(err)
-      error({
-        status: 500,
-        message: 'Failed to parse post content'
-      })
-      return
-    }
-
-    return { post }
   }
 }
 </script>

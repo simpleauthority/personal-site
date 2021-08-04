@@ -10,7 +10,12 @@
         </div>
         <div v-else v-masonry item-selector=".post">
           <b-row>
-            <BlogPostShard v-for="(post, idx) in posts" :key="'post-' + idx" :post="post" :number="posts.length - idx" />
+            <BlogPostShard
+              v-for="(post, idx) in posts"
+              :key="'post-' + idx"
+              :post="post"
+              :number="posts.length - idx"
+            />
           </b-row>
         </div>
       </b-container>
@@ -22,23 +27,23 @@
 import BlogPostShard from '../../components/blog/BlogPostShard'
 
 export default {
-  layout: 'page',
   components: { BlogPostShard },
-  head() {
+  layout: 'page',
+  async asyncData ({ $items }) {
     return {
-      title: 'Jacob Andersen\'s Blog',
+      posts: (await $items('blog_posts').readMany()).data.reverse()
+    }
+  },
+  head () {
+    return {
+      title: "Jacob Andersen's Blog",
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Engineer-in-progress'
+          content: 'Computer Scientist in progress'
         }
       ]
-    }
-  },
-  async asyncData({ app }) {
-    return {
-      posts: (await app.$strapi['$blog-posts'].find()).reverse()
     }
   }
 }

@@ -1,10 +1,10 @@
 export default {
   methods: {
-    formatShort(date) {
+    formatShort (date) {
       return this.$moment(date).format('MMMM YYYY')
     },
 
-    formatLong(date) {
+    formatLong (date) {
       return this.$moment(date).format('dddd, MMMM Do YYYY')
     }
   }

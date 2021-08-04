@@ -7,13 +7,14 @@
       <b-container>
         <b-row>
           <PortfolioEntry
-            v-for="(item, idx) in items"
+            v-for="(item, idx) in data"
             :key="'item-' + idx"
-            :title="item.project_title"
-            :href="item.project_url"
-            :image="item.project_image.url"
+            :title="item.item_name"
+            :href="item.item_link"
+            :source-href="item.item_source_link"
+            :image="item.item_picture"
           >
-            {{ item.project_description }}
+            <div v-html="item.item_description" />
           </PortfolioEntry>
         </b-row>
       </b-container>
@@ -25,24 +26,22 @@
 import PortfolioEntry from '../components/portfolio/PortfolioEntry'
 
 export default {
+  components: { PortfolioEntry },
   layout: 'page',
   transition: 'page',
-  head() {
+  async asyncData ({ $items }) {
+    return await $items('portfolio_item').readMany()
+  },
+  head () {
     return {
-      title: 'Jacob Andersen\'s Portfolio',
+      title: "Jacob Andersen's Portfolio",
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Engineer-in-progress'
+          content: 'Computer Scientist in progress'
         }
       ]
-    }
-  },
-  components: { PortfolioEntry },
-  async asyncData({ app }) {
-    return {
-      items: (await app.$strapi['$portfolio-items'].find())
     }
   }
 }

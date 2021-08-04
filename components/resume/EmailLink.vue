@@ -12,7 +12,7 @@ export default {
     }
   },
   computed: {
-    asText() {
+    asText () {
       return this.email.replace('@', '[at]').replace('.', '[dot]')
     }
   }

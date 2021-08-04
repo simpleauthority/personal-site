@@ -5,8 +5,7 @@
     </header>
     <main class="editorjs-output">
       <b-container>
-        <!-- eslint-disable-next-line vue/no-v-html -->
-        <section v-for="(block, idx) in content" :key="'about-block-' + idx" v-html="block" />
+        <div v-html="about_me" />
       </b-container>
     </main>
   </div>
@@ -16,37 +15,20 @@
 export default {
   layout: 'page',
   transition: 'page',
-  head() {
+  async asyncData ({ $single }) {
+    return await $single('about_me').read()
+  },
+  head () {
     return {
       title: 'About Jacob Andersen',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'Engineer-in-progress'
+          content: 'Computer Scientist in progress'
         }
       ]
     }
-  },
-  async asyncData({ app, error }) {
-    const about = await app.$strapi.$about.find()
-
-    try {
-      about.content = await (() => {
-        return app.$parseEjs(about.content)
-      })()
-    } catch {
-      error({
-        status: 500,
-        message: 'Failed to parse page content'
-      })
-
-      return {
-        content: 'Failed to load, try again later! Sorry!'
-      }
-    }
-
-    return about
   }
 }
 </script>
