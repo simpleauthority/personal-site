@@ -69,7 +69,6 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/strapi',
     [
       'nuxt-fontawesome',
       {
@@ -82,15 +81,6 @@ export default {
       }
     ]
   ],
-  /*
-   ** Strapi module configuration
-   ** See https://strapi.nuxtjs.org/options
-   */
-  strapi: {
-    url: 'https://cms.jacobandersen.dev',
-    // url: 'http://localhost:1337',
-    entities: ['resume', 'about', 'portfolio-items', 'blog-posts', 'blog-post-tags']
-  },
   /*
    ** Server settings
    */
