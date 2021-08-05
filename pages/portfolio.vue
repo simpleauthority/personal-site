@@ -1,7 +1,8 @@
 <template>
   <div>
     <header class="text-center mb-4">
-      <h1>Cool Things I've Made</h1>
+      <h1>Some things I have created</h1>
+      <h3><a href="https://github.com/simpleauthority/" target="_blank">See more on my GitHub Account</a></h3>
     </header>
     <main>
       <b-container>

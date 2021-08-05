@@ -1,7 +1,8 @@
 <template>
   <div>
     <header class="text-center mb-4">
-      <h1>My Scribblings</h1>
+      <h1>Here are my blog posts</h1>
+      <h3>I have no specific topics I write about. This is, more or less, a journal.</h3>
     </header>
     <main class="posts">
       <b-container>
@@ -31,7 +32,7 @@ export default {
   layout: 'page',
   async asyncData ({ $items }) {
     return {
-      posts: (await $items('blog_posts').readMany()).data.reverse()
+      posts: (await $items('blog_posts').readMany()).data.reverse().filter(post => post.publish)
     }
   },
   head () {

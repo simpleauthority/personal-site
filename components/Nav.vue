@@ -31,7 +31,7 @@ export default {
         },
         {
           path: 'portfolio',
-          text: 'Peruse my work'
+          text: 'Browse my portfolio'
         },
         {
           path: 'blog',

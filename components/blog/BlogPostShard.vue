@@ -9,7 +9,7 @@
           <small>Post #{{ number }} &vert; {{ formatShort(post.date_created) }}</small>
         </header>
         <!-- eslint-disable-next-line vue/no-v-html -->
-        <p>Post summary coming later</p>
+        <div v-html="post.post_summary" />
       </b-card>
     </b-col>
   </no-ssr>
