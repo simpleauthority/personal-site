@@ -65,18 +65,7 @@ export default {
    */
   modules: [
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
-    [
-      'nuxt-fontawesome',
-      {
-        imports: [
-          {
-            set: '@fortawesome/free-solid-svg-icons',
-            icons: ['fas']
-          }
-        ]
-      }
-    ]
+    'bootstrap-vue/nuxt'
   ],
   /**
    * Nuxt.js modules used in buiild process only
