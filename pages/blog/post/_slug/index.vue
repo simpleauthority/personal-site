@@ -20,10 +20,7 @@
 </template>
 
 <script>
-import DateMixin from '~/mixins/date-mixin'
-
 export default {
-  mixins: [DateMixin],
   layout: 'page',
   validate ({ params }) {
     return /^[A-z0-9-]*$/.test(params.slug)

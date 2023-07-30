@@ -1,4 +1,5 @@
-import Vue from 'vue'
 import VueMoment from 'vue-moment'
 
-Vue.use(VueMoment)
+export default defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.vueApp.use(VueMoment)
+})
