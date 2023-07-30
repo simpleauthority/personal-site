@@ -15,54 +15,52 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: 'Nav',
-  data () {
-    return {
-      items: [
-        {
-          path: 'about',
-          text: 'Learn about me'
-        },
-        {
-          path: 'resume',
-          text: 'See my resume'
-        },
-        {
-          path: 'portfolio',
-          text: 'Browse my portfolio'
-        },
-        {
-          path: 'blog',
-          text: 'Read my blog'
-        }
-      ]
-    }
+<script setup>
+const route = useRoute()
+
+const items = [
+  {
+    path: 'about',
+    text: 'Learn about me'
   },
-  computed: {
-    currentPage () {
-      return this.$nuxt.$route.path.substring(1)
-    },
-    includeHome () {
-      return !!this.currentPage && this.currentPage !== ''
-    },
-    pages () {
-      const items = this.items.filter(item => !this.isCurrentPage(item.path))
-      if (this.isBlogPost()) {
-        items.pop()
-      }
-      return items
-    }
+  {
+    path: 'resume',
+    text: 'See my resume'
   },
-  methods: {
-    isCurrentPage (path) {
-      return this.currentPage === path
-    },
-    isBlogPost () {
-      return this.currentPage.startsWith('blog/post')
-    }
+  {
+    path: 'portfolio',
+    text: 'Browse my portfolio'
+  },
+  {
+    path: 'blog',
+    text: 'Read my blog'
   }
+]
+
+const currentPage = computed(() => {
+  return route.path.substring(1)
+})
+
+const includeHome = computed(() => {
+  return !!currentPage && currentPage.value !== ''
+})
+
+const pages = computed(() => {
+  const filteredItems = items.filter(item => !isCurrentPage(item.path))
+  
+  if (isBlogPost()) {
+    filteredItems.pop()
+  }
+  
+  return filteredItems
+})
+
+function isCurrentPage(path) {
+  return currentPage.value === path
+}
+
+function isBlogPost() {
+  return currentPage.value.startsWith('blog/post')
 }
 </script>
 

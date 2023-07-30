@@ -9,11 +9,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content'
   ],
-  plugins: [
-    '~/plugins/vue-masonry.client.ts',
-    '~/plugins/vue-moment.ts',
-    '~/plugins/vue-disqus.ts'
-  ],
   postcss: {
     plugins: {
       tailwindcss: {},

@@ -1,59 +1,29 @@
+<script setup>
+useHead({
+  title: 'Jacob Andersen\'s Blog',
+  meta: [
+    {
+      name: 'description',
+      content: 'Computer Scientist in progress'
+    }
+  ]
+})
+</script>
+
 <template>
   <div>
     <header class="text-center mb-4">
-      <h1>Here are my blog posts</h1>
-      <h3>I have no specific topics I write about. This is, more or less, a journal.</h3>
+      <h1>My Blog Posts</h1>
     </header>
-    <main class="posts">
-      <b-container>
-        <div v-if="posts.length === 0">
-          <p>Awww. No posts yet.</p>
-        </div>
-        <div v-else v-masonry item-selector=".post">
-          <b-row>
-            <BlogPostShard
-              v-for="(post, idx) in posts"
-              :key="'post-' + idx"
-              :post="post"
-              :number="posts.length - idx"
-            />
-          </b-row>
-        </div>
-      </b-container>
-    </main>
+    <ContentList path="/blog">
+        <template #default="{ list }">
+            <div v-for="article in list" :key="article._path">
+                <h2><nuxt-link :to="article._path">{{ article.title }}</nuxt-link></h2>
+            </div>
+        </template>
+        <template #not-found>
+            <p>No articles found.</p>
+        </template>
+    </ContentList>
   </div>
 </template>
-
-<script>
-import BlogPostShard from '../../components/blog/BlogPostShard'
-
-export default {
-  components: { BlogPostShard },
-  layout: 'page',
-  async asyncData ({ $items }) {
-    return {
-      posts: (await $items('blog_posts').readMany()).data.reverse().filter(post => post.publish)
-    }
-  },
-  head () {
-    return {
-      title: "Jacob Andersen's Blog",
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Computer Scientist in progress'
-        }
-      ]
-    }
-  }
-}
-</script>
-
-<style lang="scss">
-.posts {
-  .post {
-    margin-bottom: 15px;
-  }
-}
-</style>

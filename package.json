@@ -11,15 +11,6 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
-  "dependencies": {
-    "@directus/sdk": "^10",
-    "dompurify": "^2.4.7",
-    "highlight.js": "^11.7.0",
-    "lodash": "^4.17.15",
-    "vue-disqus": "^4.0.1",
-    "vue-masonry": "^0.13.0",
-    "vue-moment": "^4.0.0"
-  },
   "devDependencies": {
     "@nuxt/content": "^2.7.2",
     "@nuxt/devtools": "^0.7.1",
