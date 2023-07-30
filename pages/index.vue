@@ -1,3 +1,15 @@
+<script setup>
+useHead({
+  title: 'Jacob Andersen',
+  meta: [
+    {
+      name: 'description',
+      content: 'Computer Scientist in progress'
+    }
+  ]
+})
+</script>
+
 <template>
   <section>
     <h1 class="text-title">
@@ -16,25 +28,7 @@
   </section>
 </template>
 
-<script>
-import Nav from '~/components/Nav'
 
-export default {
-  components: { Nav },
-  head () {
-    return {
-      title: 'Jacob Andersen',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Computer Scientist in progress'
-        }
-      ]
-    }
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 section {

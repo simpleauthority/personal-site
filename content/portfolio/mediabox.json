@@ -1,0 +1,6 @@
+{
+    "name": "Mediabox",
+    "description": "Mediabox is a \"media server in a box\". If you know how to use Docker and Docker Compose, then you simply download Mediabox and run the \"docker-compose.yml\" file. Once it's all up, you're off to the races. You can search for movies and TV for download and automatic metadata sorting with Plex.",
+    "link": "",
+    "source_link": "https://github.com/simpleauthority/mediabox"
+}

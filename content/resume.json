@@ -1,0 +1,103 @@
+{
+    "full_name": "Jacob S. Andersen",
+    "phone_number": "805-345-5399",
+    "email": "jacob@algorithmjunkie.com",
+    "current_goal": "I am currently focusing my energy on completing my degree in Computer Science before moving on to a full-time career as a Computer Scientist in the transportation sector.",
+    "relevant_skills": [
+        "JavaScript and jQuery",
+        "React and Vue",
+        "Redux and Vuex",
+        "CSS, SASS, and LESS",
+        "NPM, Yarn, and Webpack",
+        "Git version control and GitHub",
+        "Agile, Scrum, and Kanban",
+        "XML, HTML(4/5), Markdown, and more",
+        "IntelliJ IDE and Visual Studio Code",
+        "Long Polling, Server-Sent Events, and WebSockets"
+    ],
+    "other_skills": [
+        "Java, C#, PHP, and Python",
+        "Batch, Bash, and ZSH",
+        "Maven and Gradle Build Systems",
+        "Continuous Integration Systems",
+        "Automated Unit Testing",
+        "Test-Driven Development",
+        "REST, JWT, and Sessions",
+        "MySQL/MariaDB, MongoDB, and SQL Server",
+        "Apache, nginx, and IIS Webservers",
+        "Windows, Mac, and Linux"
+    ],
+    "professional_experience": [
+        {
+            "job_title": "Assistant Vice President",
+            "company_name": "Rabobank N.A.",
+            "start_date": "2018-11-07",
+            "end_date": "2019-03-01",
+            "highlights": [
+                "Made use of the .NET OnBase API to create custom solutions to major business-line pain points including document routing and custom processing.",
+                "Provided support and bug-fixes of custom .NET applications within OnBase spanning different departments such as loan operations and corporate security.",
+                "Established new OnBase virtualized architecture to reduce manual workload required to fail over in emergency situations."
+            ]
+        },
+        {
+            "job_title": "Information Technology Intern",
+            "company_name": "Rabobank N.A.",
+            "start_date": "2017-10-13",
+            "end_date": "2018-11-07",
+            "highlights": [
+                "Increased internal customer help desk efficiency by working through support tickets and following up with requests to ensure on-time completion.",
+                "Supported the training of new incoming interns from Allan Hancock College recruitment opportunities to ensure their success in their first jobs.",
+                "Learned and began the management of a new Enterprise Document Management system, OnBase, as a side-responsibility concurrently with Help Desk responsibilities."
+            ]
+        },
+        {
+            "job_title": "Private E-1",
+            "company_name": "US Army",
+            "start_date": "2016-07-26",
+            "end_date": "2016-11-04",
+            "highlights": [
+                "Learned how to handle and maintain operational security of sensitive information at all times.",
+                "Gained the ability to operate autonomously with minimal supervision and be trusted to produce a desired result on time.",
+                "Acquired a solid understanding of the importance of social structure and chain of command when escalating action items or issues.",
+                "Strengthened social synergy between fellow soldiers during team building events and learned the importance of the team as opposed to the individual."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "school_name": "California Polytechnic State University",
+            "program_name": "Bachelor of Science: Computer Science",
+            "location": "San Luis Obispo, California",
+            "start_date": "2022-09-18",
+            "end_date": null,
+            "cum_gpa": "TBA",
+            "highlights": []
+        },
+        {
+            "school_name": "Allan Hancock College",
+            "program_name": "Associate of Science: Computer Science",
+            "location": "Santa Maria, California",
+            "start_date": "2017-08-01",
+            "end_date": "2022-05-25",
+            "cum_gpa": 3.3,
+            "highlights": [
+                "Completed the college's entire line of available programming-related classes quickly with high marks.",
+                "Joined and participated as a leader in the Software Development Club in charge of recording meeting minutes and the scheduling of new events.",
+                "Earned a respectful admiration for those who have completed higher-education degree paths and an understanding of the importance of being a productive member of society."
+            ]
+        },
+        {
+            "school_name": "Ernest Righetti High School",
+            "program_name": "High School Diploma",
+            "location": "Orcutt, California",
+            "start_date": "2012-08-01",
+            "end_date": "2016-06-01",
+            "cum_gpa": 3.18,
+            "highlights": [
+                "Participated in two Advanced Placement classes and earned an AP exam score of 3 or greater.",
+                "Taught self lighting coordination and systems to successfully support the showing of a variety of performances for the student body.",
+                "Gained minor work experience by participating as a Student Clerk handling office-related duties and as a Teacher Aide providing assistance with grading."
+            ]
+        }
+    ] 
+}

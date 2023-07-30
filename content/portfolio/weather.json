@@ -1,0 +1,6 @@
+{
+    "name": "Weather",
+    "description": "Note: Being reworked. Please excuse some issues in the app. Weather is a simple app that lets you look up the current weather conditions for any arbitrary location. It uses OpenCage to geocode a place name to coordinates, OpenWeatherMap to find current conditions at those coordinates, and Wikipedia to find a nice background image that (hopefully) nicely represents those coordinates.",
+    "link": "https://apps.jacobandersen.dev/weather",
+    "source_link": "https://github.com/simpleauthority/weather"
+}

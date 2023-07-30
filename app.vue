@@ -1,0 +1,6 @@
+<template>
+    <div>
+      <NuxtPage />
+      <a rel="me" href="https://social.jacobandersen.dev/@simple" style="display:none;">Mastodon</a>
+    </div>
+</template>
