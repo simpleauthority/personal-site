@@ -11,57 +11,105 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <header class="text-center mb-4">
-      <h1>My Resume</h1>
-    </header>
+  <div class="flex flex-col items-center pb-5">
     <ContentDoc v-slot="{ doc }">
-        <h1>{{ doc.full_name }}</h1>
-        <h2>{{ doc.phone_number }}</h2>
-        <h2>{{ doc.email }}</h2>
-        <p>{{ doc.current_goal }}</p>
-        <p>Relevant Skills:</p>
-        <ul>
-            <li v-for="(skill, i) in doc.relevant_skills" :key="`relevant_skill_${i}`">
-                {{ skill }}
-            </li>
-        </ul>
-        <p>Other Skills:</p>
-        <ul>
-        <li v-for="(skill, i) in doc.other_skills" :key="`other_skill_${i}`">
-            {{ skill }}
-        </li>
-        </ul>
-        <p>Professional Experience:</p>
-        <ul>
-            <li v-for="(experience, i) in doc.professional_experience" :key="`experience_${i}`">
-                <p>{{ experience.job_title }}</p>
-                <p>{{ experience.company_name }}</p>
-                <p>{{ experience.start_date }} &ndash; {{ experience.end_date }}</p>
-                <p>Highlights:</p>
-                <ul>
-                    <li v-for="(highlight, j) in experience.highlights" :key="`experience_${i}_highlight_${j}`">
-                        <p>{{ highlight }}</p>
-                    </li>
+      <header class="text-center mt-10 mb-5">
+        <h1 class="text-title text-4xl">{{ doc.full_name }}</h1>
+          <div>
+            <h2 class="text-subtitle text-2xl"><a :href="`mailto:${doc.email}`">{{ doc.email }}</a> &ndash; <a :href="`tel:${doc.phone_number}`">{{ doc.phone_number }}</a></h2>
+          </div>
+      </header>
+      <main class="space-y-5">
+        <!-- objective -->
+        <section>
+          <header>
+            <h2 class="text-title text-2xl underline underline-offset-3 mb-2">Objective</h2>
+          </header>
+          <main>
+            <p>{{ doc.current_goal }}</p>
+          </main>
+        </section>
+        <!-- qualifications -->
+        <section>
+          <header>
+            <h2 class="text-title text-2xl underline underline-offset-3 mb-2">Qualifications</h2>
+          </header>
+          <main class="flex justify-evenly gap-x-5">
+            <!-- relevant skills -->
+            <section class="rounded-md w-full border-2 border-black p-5">
+              <header>
+                <h2 class="text-subtitle text-xl underline underline-offset-2 pb-2">Relevant Skills</h2>
+              </header>
+              <main>
+                <ul class="list-disc list-inside">
+                  <li v-for="(skill, i) in doc.relevant_skills" :key="`relevant_skill_${i}`">
+                      {{ skill }}
+                  </li>
                 </ul>
-            </li>
-        </ul>
-        <p>Education:</p>
-        <ul>
-            <li v-for="(education, i) in doc.education" :key="`education_${i}`">
-                <p>{{ education.school_name }}</p>
-                <p>{{ education.program_name }}</p>
-                <p>{{ education.location }}</p>
-                <p>{{ education.start_date }} &ndash; {{ education.end_date }}</p>
-                <p>{{ education.cum_gpa }}</p>
-                <p>Highlights:</p>
-                <ul>
+              </main>
+            </section>
+            <!-- other skills -->
+            <section class="rounded-md w-full border-2 border-black p-5">
+              <header>
+                <h2 class="text-subtitle text-xl underline underline-offset-2 pb-2">Other Skills</h2>
+              </header>
+              <main>
+                <ul class="list-disc list-inside">
+                  <li v-for="(skill, i) in doc.other_skills" :key="`other_skill_${i}`">
+                      {{ skill }}
+                  </li>
+                </ul>
+              </main>
+            </section>
+          </main>
+        </section>
+        <!-- professional experience -->
+        <section class="rounded-md w-full border-2 border-black p-5">
+          <header>
+            <h2 class="text-title text-2xl underline underline-offset-3 mb-2">Professional Experience</h2>
+          </header>
+          <main>
+            <ul class="space-y-4">
+              <li v-for="(experience, i) in doc.professional_experience" :key="`experience_${i}`">
+                  <h1 class="text-xl">{{ experience.job_title }}, {{ experience.company_name }}</h1>
+                  <div class="indent-2">
+                    <p><span>{{ experience.start_date }}</span> &ndash; <span >{{ experience.end_date }}</span></p>
+                    <ul class="list-[upper-roman] list-inside space-y-1">
+                      <li v-for="(highlight, j) in experience.highlights" :key="`experience_${i}_highlight_${j}`">
+                          {{ highlight }}
+                      </li>
+                    </ul>
+                  </div>
+              </li>
+            </ul>
+          </main>
+        </section>
+        <!-- education -->
+        <section class="rounded-md w-full border-2 border-black p-5">
+          <header>
+            <h2 class="text-title text-2xl underline underline-offset-3 mb-2">Education</h2>
+          </header>
+          <main>
+            <ul class="space-y-4">
+              <li v-for="(education, i) in doc.education" :key="`education_${i}`">
+                <h1 class="text-xl">{{ education.program_name }}</h1>
+                <div class="indent-2">
+                  <div class="text-lg">
+                    <p><span>{{ education.school_name }}</span> &ndash; <span>{{ education.location }}</span></p>
+                    <p><span>{{ education.start_date }}</span> &ndash; <span>{{ education.end_date || "Ongoing" }}</span></p>
+                    <p>Cumulative GPA: {{ education.cum_gpa }}</p>
+                  </div>
+                  <ul class="list-[upper-roman] list-inside space-y-1">
                     <li v-for="(highlight, j) in education.highlights" :key="`education_${i}_highlight_${j}`">
-                        <p>{{ highlight }}</p>
+                      {{ highlight }}
                     </li>
-                </ul>
-            </li>
-        </ul>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </main>
+        </section>
+      </main>
     </ContentDoc>
   </div>
 </template>

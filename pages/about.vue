@@ -12,9 +12,12 @@ useHead({
 
 <template>
   <div>
-    <header class="text-center mb-4">
-      <h1>About Me</h1>
+    <header class="text-center mt-10 mb-5">
+      <h1 class="text-title text-4xl">About Me</h1>
     </header>
-    <ContentDoc />
+
+    <div class="h-full flex flex-col items-center pb-5">
+      <ContentDoc class="container space-y-5" />
+    </div>
   </div>
 </template>

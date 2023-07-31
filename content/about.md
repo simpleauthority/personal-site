@@ -15,6 +15,3 @@ That all said, though, there's more to me than where I was born, what I'm doing 
 I'm also in a long-distance relationship with the most wonderful woman on the planet (I'll bet money on that!). I'm in California, USA, and she is in the Philippines. We're separated by about 7,133 miles. Due to the COVID-19 pandemic, we haven't seen each other in more than two years. Even so, we dedicate every Saturday (me) and Sunday (her) to a date day. When we can, we watch movies together using a website called TwoSeven, and we try to have deep discussions about life, love, and silliness. We truly cherish one another, and as soon as we can, we're going to unite once again.
 
 I may write more about myself later, but I'll finish here for now. If you're still reading, it's very nice to meet you (or maybe know you already).
-
-My best regards,
-Jacob
