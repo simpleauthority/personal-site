@@ -17,9 +17,9 @@ useHead({
     </header>
     <ContentList path="/blog" :query="{sort: [{written: 1}]}">
         <template #default="{ list }">
-          <div class="flex justify-center pb-5">
+          <div class="flex justify-center pb-5 px-5">
             <div class="container">
-              <section class="grid grid-cols-2 gap-x-8 gap-y-4">
+              <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
                 <div v-for="entry in list" :key="entry._path" class="rounded-md w-full border-2 border-black p-5">
                     <h2 class="text-subtitle text-2xl"><a :href="entry._path">{{ entry.title }}</a></h2>
                     <h3 class="text-subtitle text-lg mb-2">{{ entry.written }}</h3>

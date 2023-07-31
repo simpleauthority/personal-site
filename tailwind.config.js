@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,8 +11,15 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
+    screens: {
+      'xxs': '375px',
+      'xs': '475px',
+      ...defaultTheme.screens
+    },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
 
