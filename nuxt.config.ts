@@ -1,7 +1,4 @@
 export default defineNuxtConfig({
-  app: {
-    baseURL: "/"
-  },
   css: [
     '~/assets/main.css',
     '~/assets/formatting.scss'
