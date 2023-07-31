@@ -1,6 +1,6 @@
 {
     "name": "Pundasyon",
     "description": "Pundasyon means \"Foundation\" in Tagalog. This is an API written in Java using Spring to provide a few services that my other apps depend on. For example, Weather uses Pundasyon to find location and weather condition data as well as access Wikipedia. There's not much to see, though.",
-    "link": "",
+    "link": null,
     "source_link": "https://github.com/simpleauthority/pundasyon"
 }
