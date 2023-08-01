@@ -1,8 +1,13 @@
 export default defineNuxtConfig({
-  css: [
-    '~/assets/main.css',
-    '~/assets/formatting.scss'
-  ],
+  app: {
+    head: {
+      link: [
+        { rel: 'preconnect', href: 'https://rsms.me/' },
+        { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' }
+      ]
+    }
+  }, 
+  css: [ '~/assets/main.css' ],
   devtools: { 
     enabled: true 
   },

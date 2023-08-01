@@ -36,7 +36,7 @@ useHead({
           </header>
           <main class="flex flex-col sm:flex-row sm:justify-evenly gap-y-5 sm:gap-y-0 sm:gap-x-5">
             <!-- relevant skills -->
-            <section class="rounded-md w-full border-2 border-black p-5">
+            <section class="rounded-md w-full ring-2 ring-violet-300 p-5">
               <header>
                 <h2 class="text-subtitle text-xl underline underline-offset-2 pb-2">Relevant Skills</h2>
               </header>
@@ -49,7 +49,7 @@ useHead({
               </main>
             </section>
             <!-- other skills -->
-            <section class="rounded-md w-full border-2 border-black p-5">
+            <section class="rounded-md w-full ring-2 ring-violet-300 p-5">
               <header>
                 <h2 class="text-subtitle text-xl underline underline-offset-2 pb-2">Other Skills</h2>
               </header>
@@ -64,7 +64,7 @@ useHead({
           </main>
         </section>
         <!-- professional experience -->
-        <section class="rounded-md w-full border-2 border-black p-5">
+        <section class="rounded-md w-full ring-2 ring-violet-300 p-5">
           <header>
             <h2 class="text-title text-2xl underline underline-offset-3 mb-2">Professional Experience</h2>
           </header>
@@ -85,7 +85,7 @@ useHead({
           </main>
         </section>
         <!-- education -->
-        <section class="rounded-md w-full border-2 border-black p-5">
+        <section class="rounded-md w-full ring-2 ring-violet-300 p-5">
           <header>
             <h2 class="text-title text-2xl underline underline-offset-3 mb-2">Education</h2>
           </header>
