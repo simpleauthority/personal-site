@@ -11,9 +11,9 @@ useHead({
 </script>
 
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 xl:gap-16">
     <section class="lg:col-span-2">
-      <h1 class="font-semibold text-4xl lg:text-6xl bg-violet-600 p-2 mb-6">Jacob Andersen</h1>
+      <h1 class="font-semibold text-4xl lg:text-6xl xl:text-8xl bg-violet-600 p-2 mb-6">Jacob Andersen</h1>
         <h2 class="font-light text-xl lg:text-2xl mb-4">Computer Scientist, Software Artisan, Bibliophile, Husband</h2>
         <p class="font-extralight text-lg">Welcome to my humble abode on the Internet. Sometimes I write posts about computer science and/or software development (not necessarily at the same time). Other times I like to post about things I'm reading or doing. I also like to post about life in general. All things considered, nothing is predictable here. All opinions are my own and do not reflect those of any of my employers: past, present, or future.</p>
     </section>
