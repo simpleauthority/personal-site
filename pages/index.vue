@@ -44,10 +44,10 @@ useHead({
         </div>
     </section>
     <section class="hidden lg:block lg:col-span-2">
-      <BodyLink to="/portfolio" container-class="text-2xl mb-4" link-class="font-semibold" link-text="Projects">
+      <BodyLink to="/projects" container-class="text-2xl mb-4" link-class="font-semibold" link-text="Projects">
         Come have a look at my trinkets and widgets and gadgets and things!
       </BodyLink>
-      <ContentList path="/portfolio">
+      <ContentList path="/projects">
         <template #default="{ list }">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
               <div v-for="entry in list" :key="entry._path" class="flex flex-col justify-between ring-1 ring-violet-300 rounded-md p-4">
