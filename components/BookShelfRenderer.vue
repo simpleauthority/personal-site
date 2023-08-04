@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { Info } from '~/components/BookCard.vue'
+import { Size, Info } from '~/components/BookCard.vue'
 
 export interface Props {
     name: string,
     fileName: string,
-    columnCount: number
+    columnCount: number,
+    imageSize?: Size
 }
 
-const { name, fileName, columnCount } = defineProps<Props>()
+const { name, fileName, columnCount, imageSize } = defineProps<Props>()
 
 const flooredColumnCount = computed(() => Math.floor(columnCount))
 
@@ -33,10 +34,16 @@ const infos: Info[] = data.value?.reading_log_entries.map((entry: any) => {
 </script>
 
 <template>
-    <section>
-        <h2 class="text-2xl">{{ name }} ({{ infos.length }})</h2>
-        <div :class="`grid grid-cols-${flooredColumnCount} gap-4 justify-items-center`">
-            <PaginatedBookCardRenderer :infos="infos" :column-count="flooredColumnCount" />
+    <section class="ring-2 p-4 rounded-md">
+        <div v-if="pending">
+            <h2 class="text-2xl mb-2">{{ name }}</h2>
+            <p>Loading...</p>
+        </div>
+        <div v-else>
+            <h2 class="text-2xl mb-2">{{ name }} ({{ infos.length }})</h2>
+            <div :class="`grid grid-cols-${flooredColumnCount} gap-4`">
+                <PaginatedBookCardRenderer :infos="infos" :image-size="imageSize" />
+            </div>
         </div>
     </section>
 </template>

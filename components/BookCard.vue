@@ -4,7 +4,7 @@ export interface Props {
     info: Info
 }
 
-const { size, info } = withDefaults(defineProps<Props>(), { size: Size.Medium })
+const { size, info } = withDefaults(defineProps<Props>(), { size: Size.Small })
 
 const coverURL = computed(() => {
     if (!info.cover_key) {
@@ -12,6 +12,17 @@ const coverURL = computed(() => {
     }
 
     return `https://covers.openlibrary.org/b/olid/${info.cover_key}-${size}.jpg`
+})
+
+const imageSizeClass = computed(() => {
+    switch (size) {
+        case Size.Small:
+            return "w-[37px] h-[58px]"
+        case Size.Medium:
+            return "w-[180px] h-[280px]"
+        case Size.Large:
+            return "w-[321px] h-[500px]"
+    }
 })
 </script>
 
@@ -35,8 +46,11 @@ export interface Info {
 </script>
 
 <template>
-    <div>
-        <img :src="coverURL" :alt="info.title" class="w-[180px] h-[280px]" />
-        {{ info.title }} by {{ info.author.name }}
+    <div class="flex gap-x-4 items-center">
+        <img :src="coverURL" :alt="info.title" :class="imageSizeClass" />
+        <div>
+            <p class="font-medium">{{ info.title }}</p>
+            <p class="text-sm font-thin">{{ info.author.name }}</p>
+        </div>
     </div>
 </template>

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Size } from '~/components/BookCard.vue'
+
 useHead({
   title: 'Jacob Andersen\'s Reading List',
   meta: [
@@ -11,7 +13,7 @@ useHead({
 </script>
 
 <template>
-  <div class="grid grid-cols-3">
+  <div class="grid grid-cols-3 gap-x-6">
     <section class="col-span-3 mb-4">
       <BodyLink to="/" link-text="← Go Back" />
     </section>
@@ -20,7 +22,7 @@ useHead({
         <p class="font-extralight text-xl">Alright. Well, here it is. The reading list. Do I earn the "Bibliophile" title yet? Don't worry, I'll add more books.</p>
     </section>
     <BookShelfRenderer name="To Be Read" file-name="want-to-read.json" :column-count="2" />
-    <BookShelfRenderer name="Currently Reading" file-name="currently-reading.json" :column-count="1" />
+    <BookShelfRenderer name="Currently Reading" file-name="currently-reading.json" :column-count="1" :image-size="Size.Medium"/>
     <BookShelfRenderer name="Already Read" file-name="already-read.json" :column-count="2" />
   </div>
 </template>
