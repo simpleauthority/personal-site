@@ -8,7 +8,7 @@ export interface Props {
 
 const { infos, imageSize } = defineProps<Props>()
 
-const PER_PAGE = 10
+const PER_PAGE = 6
 const pages = Math.floor((infos.length + PER_PAGE - 1) / PER_PAGE)
 const page = ref(1)
 
@@ -63,7 +63,6 @@ const navigablePages = computed(() => {
 </script>
 
 <template>
-    <Paginator v-if="pages > 1" class="col-span-full flex justify-evenly" :page="page" :navigable-pages="navigablePages" :has-prev-page="hasPrevPage" :has-next-page="hasNextPage" @prevPage="prevPage" @goToPage="goToPage" @nextPage="nextPage" />
     <BookCard v-for="info in infosSubset" :key="info.cover_key" :info="info" :size="imageSize" />
-    <Paginator v-if="pages > 1" class="col-span-full flex justify-evenly" :page="page" :navigable-pages="navigablePages" :has-prev-page="hasPrevPage" :has-next-page="hasNextPage" @prevPage="prevPage" @goToPage="goToPage" @nextPage="nextPage" />
+    <Paginator v-if="pages > 1" class="mt-4 col-span-full flex justify-evenly" :page="page" :navigable-pages="navigablePages" :has-prev-page="hasPrevPage" :has-next-page="hasNextPage" @prevPage="prevPage" @goToPage="goToPage" @nextPage="nextPage" />
 </template>
