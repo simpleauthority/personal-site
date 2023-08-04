@@ -19,7 +19,7 @@ function buildShelfURL(file: any) {
   return `${shelfBase}/${file}?limit=${limit}`
 }
 
-const { data, error, pending } = await useFetch<any>(buildShelfURL(fileName))
+const { data, error, pending, refresh } = await useLazyFetch<any>(buildShelfURL(fileName))
 
 const infos: Info[] = data.value?.reading_log_entries.map((entry: any) => {
     return {
@@ -35,15 +35,16 @@ const infos: Info[] = data.value?.reading_log_entries.map((entry: any) => {
 
 <template>
     <section class="ring-2 p-4 rounded-md">
+        <h2 class="text-2xl mb-2">{{ name }} <span v-if="!pending && !error && infos">({{ infos.length }})</span></h2>
         <div v-if="pending">
-            <h2 class="text-2xl mb-2">{{ name }}</h2>
-            <p>Loading...</p>
+            <p>Loading shelf...</p>
         </div>
-        <div v-else>
-            <h2 class="text-2xl mb-2">{{ name }} ({{ infos.length }})</h2>
-            <div :class="`grid grid-cols-${flooredColumnCount} gap-4`">
-                <PaginatedBookCardRenderer :infos="infos" :image-size="imageSize" />
-            </div>
+        <div v-else-if="error">
+            <p>An error occurred loading the data for this shelf...</p>
+            <BodyLink to="#" @click="refresh" link-text="Try again" />
+        </div>
+        <div v-else :class="`grid grid-cols-${flooredColumnCount} gap-4`">
+            <PaginatedBookCardRenderer :infos="infos" :image-size="imageSize" />
         </div>
     </section>
 </template>
