@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Size, Info } from '~/components/BookCard.vue'
+import { Size, type Info } from '~/components/BookCard.vue'
 
 export interface Props {
     infos: Info[],

@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: "yarn"
+          cache: "bun"
 
       - name: Restore cache
         uses: actions/cache@v3
@@ -49,10 +49,10 @@ jobs:
             ${{ runner.os }}-nuxt-build-
               
       - name: Install dependencies
-        run: yarn install
+        run: bun install
 
       - name: Static HTML export with Nuxt
-        run: yarn generate
+        run: bun generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
