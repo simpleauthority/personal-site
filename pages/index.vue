@@ -42,10 +42,6 @@ useHead({
             I like to take photos. After I organize them, I put some of my favorites in this album.
           </BodyLink>
         </div>
-        <div class="font-light text-xl">
-          <h1 class="font-semibold text-2xl">My Music</h1>
-          <SpotifyCurrentlyListening />
-        </div>
     </section>
     <section class="hidden lg:block lg:col-span-2">
       <BodyLink to="/projects" container-class="text-2xl mb-4" link-class="font-semibold" link-text="Projects">
