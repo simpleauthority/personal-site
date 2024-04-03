@@ -22,7 +22,7 @@ useHead({
           <h1 class="font-semibold text-2xl">The Shelf</h1>
           <p class="font-light text-sm">This section is a shelf. Indeed, a splendid little shelf chock full of trinkets and widgets and gadgets and all manner of other whimsical oddities. Here you can find your way around my dwelling, until you've seen it all. Welcome one, welcome all. Please clean up as you go.</p>
         </div>
-        <div class="font-light text-xl grid grid-cols-2 gap-4">
+        <div class="font-light text-xl grid grid-cols-2 gap-4 mb-4">
           <BodyLink to="/blog" linkText="Blog" class="block sm:hidden">
             Penny for <span class="font-bold">my</span> thoughts? Why, don't mind if I do...
           </BodyLink>
@@ -41,6 +41,10 @@ useHead({
           <BodyLink to="/gallery" linkText="Photo Gallery">
             I like to take photos. After I organize them, I put some of my favorites in this album.
           </BodyLink>
+        </div>
+        <div class="font-light text-xl">
+          <h1 class="font-semibold text-2xl">My Music</h1>
+          <SpotifyCurrentlyListening />
         </div>
     </section>
     <section class="hidden lg:block lg:col-span-2">
