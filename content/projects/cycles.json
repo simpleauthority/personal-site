@@ -1,6 +1,0 @@
-{
-    "name": "Cycles",
-    "description": "Note: There are some issues with the time intervals at present. The cycles app allows you to choose whether or not you are going to sleep now or if you have a specific time you'd like to wake up. Once you've made your choice, it calculates a few optimal times at which you should be asleep in order to maximize your sleep cycles and thereby your sleep efficiency.",
-    "link": "https://apps.jacobandersen.dev/cycles",
-    "source_link": "https://github.com/simpleauthority/cycles"
-}

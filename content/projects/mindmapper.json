@@ -1,6 +1,0 @@
-{
-    "name": "Mindmapper",
-    "description": "Mindmapper is an application that allows the user to organize their thoughts for critical thinking. The user can enter a main idea and sub-ideas which extend from it. For each sub-idea, there can be multiple counterpoints, and for each counterpoint there can be multiple rebuttals. Finally, the user can export the end-result to PDF for safe keeping.",
-    "link": "https://apps.jacobandersen.dev/mindmapper",
-    "source_link": "https://github.com/simpleauthority/mindmapper"
-}

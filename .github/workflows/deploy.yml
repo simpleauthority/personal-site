@@ -2,7 +2,7 @@
 #
 # To get started with Nuxt see: https://nuxtjs.org/docs/get-started/installation
 #
-name: Deploy Nuxt site to Pages
+name: Deploy Next site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -38,8 +38,8 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Static HTML export with Nuxt
-        run: bun run generate
+      - name: Static HTML export with Next
+        run: bun run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

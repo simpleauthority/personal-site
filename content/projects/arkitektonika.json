@@ -1,6 +1,0 @@
-{
-    "name": "Arkitektonika",
-    "description": "Arkitektonika is a small purpose-built webserver and file repository that is made to temporarily store uploaded NBT (Named Binary Tag) format files for sharing with others or transferal between other systems. Arkitektonika was originally written by me for IntellectualSites, a loose open-source software collective. The code has changed since my original contributions.",
-    "link": null,
-    "source_link": "https://github.com/IntellectualSites/Arkitektonika"
-}

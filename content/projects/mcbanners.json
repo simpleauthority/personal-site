@@ -1,6 +1,0 @@
-{
-    "name": "MCBanners",
-    "description": "MCBanners is a free service for Minecraft server operators and game modification developers to generate dynamic images that represent their server and/or software. Nearly the entire (primitive) microservices-based infrastructure was written by me using Spring in approximately one month.",
-    "link": "https://mcbanners.com",
-    "source_link": "https://github.com/mcbanners/"
-}
