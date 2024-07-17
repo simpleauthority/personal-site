@@ -22,6 +22,8 @@ import image5 from '@/images/photos/image-5.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
+export const runtime = 'edge'
+
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg

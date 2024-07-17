@@ -1,5 +1,3 @@
-import glob from 'fast-glob'
-
 interface Article {
   title: string
   description: string
@@ -26,9 +24,7 @@ async function importArticle(
 }
 
 export async function getAllArticles() {
-  let articleFilenames = await glob('*/page.mdx', {
-    cwd: './src/app/blog',
-  })
+  let articleFilenames: string[] = [] // tmp
 
   let articles = await Promise.all(articleFilenames.map(importArticle))
 
