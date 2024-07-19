@@ -2,12 +2,12 @@ import { type Metadata } from 'next'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
+import { getAllArticles } from '@/lib/articles'
+import { formatDateToISO, formatDateToHuman } from '@/lib/formatDate'
 
 export const runtime = 'edge'
 
-function Article({ article }: { article: ArticleWithSlug }) {
+function Article({ article }: { article: Article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
@@ -16,21 +16,21 @@ function Article({ article }: { article: ArticleWithSlug }) {
         </Card.Title>
         <Card.Eyebrow
           as="time"
-          dateTime={article.date}
+          dateTime={formatDateToISO(article.created)}
           className="md:hidden"
           decorate
         >
-          {formatDate(article.date)}
+          {formatDateToHuman(article.created)}
         </Card.Eyebrow>
         <Card.Description>{article.description}</Card.Description>
         <Card.Cta>Read article</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"
-        dateTime={article.date}
+        dateTime={formatDateToISO(article.created)}
         className="mt-1 hidden md:block"
       >
-        {formatDate(article.date)}
+        {formatDateToHuman(article.created)}
       </Card.Eyebrow>
     </article>
   )

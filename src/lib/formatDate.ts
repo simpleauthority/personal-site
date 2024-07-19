@@ -1,8 +1,12 @@
-export function formatDate(dateString: string) {
-  return new Date(`${dateString}T00:00:00Z`).toLocaleDateString('en-US', {
+export function formatDateToISO(date: number) {
+  return new Date(date).toISOString()
+}
+
+export function formatDateToHuman(date: number) {
+  return new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
     year: 'numeric',
-    timeZone: 'UTC',
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
   })
 }

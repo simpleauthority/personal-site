@@ -19,8 +19,8 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
-import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
-import { formatDate } from '@/lib/formatDate'
+import { getAllArticles } from '@/lib/articles'
+import { formatDateToISO, formatDateToHuman } from '@/lib/formatDate'
 
 export const runtime = 'edge'
 
@@ -83,14 +83,14 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function Article({ article }: { article: ArticleWithSlug }) {
+function Article({ article }: { article: Article }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
+      <Card.Title href={`/blog/${article.slug}`}>
         {article.title}
       </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
+      <Card.Eyebrow as="time" dateTime={formatDateToISO(article.created)} decorate>
+        {formatDateToHuman(article.created)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
